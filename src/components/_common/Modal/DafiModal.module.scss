@@ -1,0 +1,41 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.modal {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #151515;
+  overflow: auto;
+  width: 90vw;
+  max-width: 460px;
+  outline: none;
+}
+.modalContent {
+  width: 100%;
+  .header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 20px;
+    height: 35px;
+    .cancel {
+      cursor: pointer;
+      img {
+        width: 12px;
+        height: auto;
+      }
+    }
+  }
+  .content {
+    //General Content Styling Here
+    width: 100%;
+  }
+}

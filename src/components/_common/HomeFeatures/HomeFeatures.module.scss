@@ -1,0 +1,91 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 861px;
+  margin-top: 50px;
+  .wrapper {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .featureRow {
+      //margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      .featureCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #21232E;
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 370px;
+        height: 359px;
+        margin: 10px 20px;
+        //box-shadow: 0px 40px 60px rgba(23, 25, 33, 0.3);
+        .icon {
+          margin-bottom: 20px;
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+        }
+        .heading {
+          font-size: 20px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        .text {
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 1.5rem;
+          text-align: center;
+          color: #6b7394;
+          max-width: 268px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    background-image: url("../../../assets/images/features-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .wrapper {
+
+      .featureRow {
+        flex-direction: row;
+        margin-bottom: 20px;
+
+        .featureCard {
+
+          .icon {
+
+            img {
+
+            }
+          }
+          .heading {
+
+          }
+          .text {
+
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7.486" height="12" viewBox="0 0 7.486 12">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_2735" data-name="Path 2735" d="M4909.135-278.3v1.3h-2.783v-1.3Zm-1.392-10.7a.463.463,0,0,1,.328.137h0l3.279,3.279a.464.464,0,0,1,.1.505.464.464,0,0,1-.429.286h-1.887v5.659h-2.783v-5.659h-1.888a.465.465,0,0,1-.43-.286.451.451,0,0,1-.034-.177.461.461,0,0,1,.136-.328h0l3.279-3.279A.465.465,0,0,1,4907.743-289Z" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="Path_2734" data-name="Path 2734" d="M4248,0H5614V-1024H4248Z" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="invest-icon" transform="translate(-4904 289)" clip-path="url(#clip-path)">
+    <g id="Group_2714" data-name="Group 2714" clip-path="url(#clip-path-2)">
+      <path id="Path_2733" data-name="Path 2733" d="M4899-294h17.487v22H4899Z" fill="#fff"/>
+    </g>
+  </g>
+</svg>

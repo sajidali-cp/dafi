@@ -1,0 +1,105 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .header {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 20px;
+    .headerInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      order: 2;
+      .headerHeading {
+        font-weight: 300;
+        font-size: 25px;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 20px;
+        line-height: 1.5rem;
+      }
+      .headerText {
+        font-weight: normal;
+        font-size: 16px;
+        letter-spacing: 0.01em;
+        line-height: 30.2px;
+        text-align: center;
+        color: #717584;
+        width: 100%;
+        max-width: 440px;
+      }
+      .headerButton {
+        outline: none;
+        margin-top: 20px;
+        cursor: pointer;
+        text-align: center;
+        width: 200px;
+        height: 40px;
+        border-radius: 5px;
+        background-color: #3ddece;
+        color: white;
+        border: 1px solid transparent;
+      }
+    }
+    .headerIllustration {
+      width: 100%;
+      order: 1;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .wrapper {
+    background-image: url("../../../assets/images/home-header-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .header {
+      flex-direction: row;
+      column-gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 50px;
+      .headerInfo {
+        order: 1;
+        align-items: flex-start;
+        .headerHeading {
+          text-align: left;
+          font-size: 40px;
+          line-height: 50px;
+        }
+        .headerText {
+          text-align: left;
+          max-width: 400px;
+        }
+        .headerButton {
+
+        }
+      }
+      .headerIllustration {
+        order: 2;
+        width: 800px;
+        img {
+
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .wrapper {
+    .header {
+      padding: 20px;
+    }
+  }
+}

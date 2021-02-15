@@ -1,0 +1,392 @@
+.wrapper {
+  background-color: #191919;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+
+  .logo {
+    outline: none;
+    display: flex;
+    img {
+     width: 100px;
+      height: auto;
+      outline: none;
+    }
+  }
+
+  .burgerMenu {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .actionsDiv {
+    display: none;
+    .webtokenSelection {
+      .webselectionText {
+      }
+      .webassetActiveDiv {
+      }
+      .webassetDiv {
+        .webicon {
+          img {
+          }
+        }
+        .webiconInfo {
+          .webname {
+          }
+          .webinfo {
+          }
+        }
+      }
+      .weblearnText {
+      }
+    }
+  }
+  .weblearnText {
+   display: none;
+  }
+}
+
+
+//Connect Wallet Styling
+.connectModal {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  .connectOption {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    padding: 20px 0;
+    // border-bottom: 1px solid #212121;
+    .provider {
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+      .image {
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+      .name {
+        font-weight: 500;
+      }
+    }
+    .button {
+      color: white;
+      background-color: #212121;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      height: 40px;
+      width: 150px;
+      font-size: 14px;
+      outline: none;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 1200px) {
+  .wrapper {
+    background-color: #191919;
+    width: 20%;
+    height: 100vh;
+    min-height: 798.4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 60px 20px;
+    position: relative;
+
+    .logo {
+      outline: none;
+      img {
+        width: 150px;
+        height: auto;
+        outline: none;
+      }
+    }
+
+    .burgerMenu {
+      display: none;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+    .actionsDiv {
+      margin-top: 30px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 40px;
+      .connect {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 10px;
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        background-color: #1A1A1A;
+        border: 1px solid #10867A;
+
+        .walletIcon {
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+        }
+        .text {
+          font-size: 14px;
+          color: white;
+        }
+      }
+      .webtokenSelection {
+        width: 100%;
+        .webselectionText {
+          font-weight: normal;
+          font-size: 14px;
+          text-align: left;
+          color: #5c5c5c;
+          margin-bottom: 20px;
+        }
+        .webassetActiveDiv {
+          background: #101010;
+          border-radius: 5px;
+        }
+        .webassetDiv {
+          cursor: pointer;
+          padding: 10px;
+          display: flex;
+          flex-direction: row;
+          column-gap: 10px;
+          flex-wrap: nowrap;
+          margin-bottom: 20px;
+          .webicon {
+            width: 30px;
+            img {
+              max-width: 100%;
+              height: auto;
+            }
+          }
+          .webiconInfo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .webname {
+              font-weight: 500;
+              font-size: 15px;
+              letter-spacing: 0em;
+              text-align: left;
+              color: #fff;
+            }
+            .webinfo {
+              font-weight: 500;
+              font-size: 12px;
+              letter-spacing: 0em;
+              text-align: left;
+              color: #686868;
+            }
+          }
+        }
+      }
+    }
+    .weblearnText {
+      position: absolute;
+      padding: inherit;
+      bottom: 0;
+      display: flex;
+      font-weight: 600;
+      text-decoration: underline;
+      font-size: 14px;
+      text-align: center;
+      color: #fff;
+    }
+  }
+}
+
+// @media only screen and (min-width: 2560px) {
+//   .wrapper {
+//     background-color: #191919;
+//     width: 20%;
+//     height: 100vh;
+//     min-height: 798.4px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: flex-start;
+//     padding: 60px 20px;
+//     position: relative;
+
+//     .logo {
+//       outline: none;
+//       img {
+//         width: 300px;
+//         height: auto;
+//         outline: none;
+//       }
+//     }
+
+//     .burgerMenu {
+//       display: none;
+//       img {
+//         max-width: 100%;
+//         height: auto;
+//       }
+//     }
+//     .actionsDiv {
+//       margin-top: 30px;
+//       width: 100%;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       justify-content: center;
+//       row-gap: 100px;
+//       .connect {
+//         cursor: pointer;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         column-gap: 10px;
+//         width: 100%;
+//         height: 80px;
+//         border-radius: 5px;
+//         background-color: #1A1A1A;
+//         border: 1px solid #10867A;
+
+//         .walletIcon {
+//           img {
+//             width: 50px;
+//             height: auto
+//           }
+//         }
+//         .text {
+//           font-size: 30px;
+//           color: white;
+//         }
+//       }
+//       .webtokenSelection {
+//         width: 100%;
+//         .webselectionText {
+//           font-weight: normal;
+//           font-size: 30px;
+//           text-align: left;
+//           color: #5c5c5c;
+//           margin-bottom: 20px;
+//         }
+//         .webassetActiveDiv {
+//           background: #101010;
+//           border-radius: 5px;
+//         }
+//         .webassetDiv {
+//           cursor: pointer;
+//           padding: 10px;
+//           display: flex;
+//           flex-direction: row;
+//           column-gap: 10px;
+//           flex-wrap: nowrap;
+//           margin-bottom: 20px;
+//           .webicon {
+//             width: 100px;
+//             img {
+//               max-width: 70px;
+//               height: auto;
+//             }
+//           }
+//           .webiconInfo {
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: center;
+//             .webname {
+//               font-weight: 500;
+//               font-size:30px;
+//               letter-spacing: 0em;
+//               text-align: left;
+//               color: #fff;
+//             }
+//             .webinfo {
+//               font-weight: 500;
+//               font-size: 25px;
+//               letter-spacing: 0em;
+//               text-align: left;
+//               color: #686868;
+//             }
+//           }
+//         }
+//       }
+//     }
+//     .weblearnText {
+//       position: absolute;
+//       padding: inherit;
+//       bottom: 0;
+//       display: flex;
+//       font-weight: 600;
+//       text-decoration: underline;
+//       font-size: 30px;
+//       text-align: center;
+//       color: #fff;
+//     }
+//   }
+// }
+
+//Connect Wallet Styling
+.connectModal {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  .connectOption {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // height: 70px;
+    padding: 20px 0;
+    // border-bottom: 1px solid #212121;
+    .provider {
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+      .image {
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+      .name {
+        font-weight: 500;
+      }
+    }
+    .button {
+      color: white;
+      background-color: #212121;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      height: 40px;
+      width: 150px;
+      font-size: 14px;
+      outline: none;
+    }
+  }
+}
+
