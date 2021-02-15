@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from './MainNavigation.module.scss';
 import { Link, useLocation } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
-import logo from "../../../assets/images/nav-logo.svg";
+import logo from "../../../assets/images/dashboard-nav-logo.svg";
 import menu from "../../../assets/images/burger-menu.svg";
 
 const MainNavigation = () => {

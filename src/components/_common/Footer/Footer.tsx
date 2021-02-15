@@ -5,7 +5,7 @@ import social2 from "../../../assets/images/social2.svg";
 import social3 from "../../../assets/images/social3.svg";
 import social4 from "../../../assets/images/social4.svg";
 import social5 from "../../../assets/images/social5.svg";
-import logo from "../../../assets/images/nav-logo.svg";
+import logo from "../../../assets/images/dashboard-nav-logo.svg";
 
 const Footer = () => {
   return (
