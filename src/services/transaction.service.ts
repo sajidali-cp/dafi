@@ -16,7 +16,7 @@ export const getdToken = async (
   let walletInfo = store.getState().wallet;
 
   let activeAddress = walletInfo.selected.address;
-debugger
+
   if (web3.currentProvider) {
    try {
     const contractInfo = ContractLookup.find(
@@ -28,12 +28,19 @@ debugger
         contractInfo.contractAddress,
         { from: activeAddress }
       );
+      debugger
+//       web3.eth.getGasPrice()
+// .then((gas)=>console.log({gas}));
+
+var block = await web3.eth.getBlock("latest");
+var gasLimit = Math.ceil(block.gasLimit/block.transactions.length);
+console.log(gasLimit)
+
       //amount = amount * Math.pow(10, contractInfo.decimal);
      let gassPrice = gassFee * Math.pow(10, 9);
-     let gassLimit=2100000;
+     let gassLimit=gasLimit;
      let temp=web3.utils.fromWei(String(gassPrice * gassLimit), 'ether')
      let finalDeduction=Number(temp)
-     debugger
      var _balanceInWei;
      if(_type == "dETH"){
       _balanceInWei = Web3.utils.toWei(String(_balance-0.0015-finalDeduction), 'ether');
