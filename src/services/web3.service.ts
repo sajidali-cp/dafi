@@ -110,7 +110,8 @@ export const updateDAssets = async () => {
     let finalChartData =
       Number(DAFIObj.USDValOfdBTC) > 0 ||
       Number(DAFIObj.USDValOfdETH) > 0 ||
-      Number(DAFIObj.USDValOfdLINK) > 0
+      Number(DAFIObj.USDValOfdLINK) > 0 ||
+      Number(DAFIObj.USDValOfdSNX) > 0
         ? chartsAssets
         : [];
     data = {

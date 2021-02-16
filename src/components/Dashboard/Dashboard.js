@@ -34,7 +34,7 @@ const Dashboard = () => {
     balances,
     chartData,
   } = useSelector((state) => state.wallet);
-  console.log(selected);
+  console.log(chartData);
   const [errorMessage, setErrorMessage] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeShort, setActiveShort] = useState("wBTC");

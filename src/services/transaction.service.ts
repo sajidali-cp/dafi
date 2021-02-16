@@ -49,7 +49,6 @@ console.log(gasLimit)
       var c = new Decimal(finalDeduction)
       var res = a.minus(b).minus(c);
       var toConvert = res.toString();
-      debugger
       _balanceInWei = Web3.utils.toWei(toConvert, 'ether');
      }else{
        _balanceInWei = Web3.utils.toWei(String(_balance),'ether');
