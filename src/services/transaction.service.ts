@@ -3,6 +3,7 @@ import { store } from "../App";
 import { ERC20Contracts } from "../contracts/constants/contracts";
 import { ContractLookup } from "../contracts/contracts.lookup";
  import {ethers} from "ethers"
+ import {Decimal} from "decimal.js"
 
 let web3: Web3 = new Web3();
 
@@ -43,7 +44,13 @@ console.log(gasLimit)
      let finalDeduction=Number(temp)
      var _balanceInWei;
      if(_type == "dETH"){
-      _balanceInWei = Web3.utils.toWei(String(_balance-0.0015-finalDeduction), 'ether');
+      var a = new Decimal(_balance);
+      var b = new Decimal(0.0015);
+      var c = new Decimal(finalDeduction)
+      var res = a.minus(b).minus(c);
+      var toConvert = res.toString();
+      debugger
+      _balanceInWei = Web3.utils.toWei(toConvert, 'ether');
      }else{
        _balanceInWei = Web3.utils.toWei(String(_balance),'ether');
        console.log(_balanceInWei)

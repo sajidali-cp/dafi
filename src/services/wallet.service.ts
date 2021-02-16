@@ -103,6 +103,7 @@ const getChange=(closePrev:number, closeNow:number) => {
     return val;
   }
 export const updateBalances = async () => {
+    debugger
     let walletInfo = store.getState().wallet;
     activeAddress = walletInfo.selected.address;
     const assets = ContractLookup.filter(c => !c.isSyntheticAsset);
