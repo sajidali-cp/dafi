@@ -11,7 +11,7 @@ const Home = () => {
         <>
             <div className={styles.wrapper}>
                 <HomeHeader />
-                <TokenAllocation />
+                {/* <TokenAllocation /> */}
                 <HomeDemand />
                 <HomeFeatures />
                 <Footer/>
