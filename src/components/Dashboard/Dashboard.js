@@ -46,7 +46,7 @@ const Dashboard = () => {
     usdValue: 0,
   });
   const setUpcomponent = async (index) => {
-    debugger;
+    ;
     let res = await asyncGetTokenSupplyHistory(
       balances.length > 0 ? balances[index].short : "wBTC"
     );
@@ -148,7 +148,7 @@ const Dashboard = () => {
     }
     if (
       Number(state.amount) > balances[activeIndex].cryptoBalance ||
-      balances[activeIndex].cryptoBalance === 0
+      balances[activeIndex].cryptoBalance === "0"
     ) {
       setErrorMessage("Not enough balance");
       validated = false;

@@ -98,7 +98,7 @@ export const updateDAssets = async () => {
       ETHBalance: ETHBalance ? ETHBalance : 0,
       isConnected : true,
     };
-    debugger
+    
     let chartsAssets = [
       { name: "dBTC", value: Number(DAFIObj.USDValOfdBTC), fill: "#f8c624" },
       { name: "dETH", value: Number(DAFIObj.USDValOfdETH), fill: "#6b74b5" },

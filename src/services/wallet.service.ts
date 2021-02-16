@@ -75,7 +75,7 @@ const getPriceObject = async (asset: IContractLookup,activeAddress:any): Promise
       else{
         bal = await getERC20Balance(contractInfo, activeAddress);
       }
-      debugger
+      
 const obj:any=await dTokenDetails(asset.bytesCode);
 console.log(obj)
 
@@ -139,9 +139,10 @@ export const getERC20Balance = async (contractInfo: any, address: string): Promi
             const contract = new web3.eth.Contract(contractInfo.contractAbi, contractInfo.contractAddress, {});
             try {
                 const balance = await contract.methods.balanceOf(address).call();
-                
+                debugger
                 var balanceInWei =  ConvertFromE(web3.utils.fromWei(balance, 'ether'));
-                return Number(balanceInWei);
+                // balanceInWei=parseFloat(balanceInWei)
+                return balanceInWei;
                 // let bal: number = Number(balanceInWei);// / Math.pow(10, contractInfo.decimal)
                 // return bal;
             } catch (error) {
@@ -169,7 +170,7 @@ export const getDAFI20Balance = async (contractInfo: any, address: string): Prom
         if (contractInfo) {
             const contract = new web3.eth.Contract(contractInfo.contractAbi, contractInfo.contractAddress, {});
             try {
-                debugger
+                
                 const obj = await contract.methods.getDAFIToken(address).call();
                 if(obj){
                     chartsAssets.DFYToken=  ConvertFromE(web3.utils.fromWei(obj.DFYToken, 'ether'));
@@ -215,7 +216,7 @@ export const dTokenDetails = async (bytesCode: string): Promise<number> => {
 
 //@ts-ignore
 export const getTokenSupplyHistory = async (short: string): Promise<Array> => {
-    debugger
+    
     web3 = store.getState().wallet.web3;
     const DAFIPLATFORM = ContractLookup.find(
         (contract) => contract.contractName === ERC20Contracts.DAFIPLATFORM
@@ -264,7 +265,7 @@ export const getTokenSupplyHistory = async (short: string): Promise<Array> => {
 
 //@ts-ignore
 export const totalSupply = async (short: string): Promise<object> => {
-    debugger
+    
     let asset:any;
     switch (short){
         case "wBTC":

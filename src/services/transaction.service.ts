@@ -28,7 +28,7 @@ export const getdToken = async (
         contractInfo.contractAddress,
         { from: activeAddress }
       );
-      debugger
+      
 //       web3.eth.getGasPrice()
 // .then((gas)=>console.log({gas}));
 
