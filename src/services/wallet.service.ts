@@ -75,7 +75,7 @@ const getPriceObject = async (asset: IContractLookup,activeAddress:any): Promise
       else{
         bal = await getERC20Balance(contractInfo, activeAddress);
       }
-      
+      debugger
 const obj:any=await dTokenDetails(asset.bytesCode);
 console.log(obj)
 
@@ -141,7 +141,7 @@ export const getERC20Balance = async (contractInfo: any, address: string): Promi
                 const balance = await contract.methods.balanceOf(address).call();
                 
                 var balanceInWei =  ConvertFromE(web3.utils.fromWei(balance, 'ether'));
-                return balanceInWei;
+                return Number(balanceInWei);
                 // let bal: number = Number(balanceInWei);// / Math.pow(10, contractInfo.decimal)
                 // return bal;
             } catch (error) {
