@@ -56,6 +56,7 @@ export const initializeWeb3 = async (source: web3Sources): Promise<any> => {
 };
 
 export const updateDAssets = async () => {
+  debugger
   const accounts = await web3.eth.getAccounts();
   console.log(accounts);
   if (accounts.length <= 0) {
@@ -86,6 +87,7 @@ export const updateDAssets = async () => {
     let dBTCBalance: any = await getERC20Balance(dBTC, accounts[i]);
     let dETHBalance: any = await getERC20Balance(dETH, accounts[i]);
     let dSNXBalance: any = await getERC20Balance(dSNX, accounts[i]);
+    debugger
     let DAFIObj: any = await getDAFI20Balance(DAFI, accounts[i]);
     let ETHBalance = await getETHBalance(accounts[i]);
     let walletObj: Wallet = {

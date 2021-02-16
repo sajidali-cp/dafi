@@ -23,6 +23,7 @@ import { isNumber } from "lodash";
 import {
   getTokenSupplyHistory,
   totalSupply,
+  updateBalances,
 } from "../../services/wallet.service";
 
 const Dashboard = () => {
@@ -133,6 +134,7 @@ const Dashboard = () => {
         alert.show("dToken Created Successfully.", { type: "success" });
         setIsCreating(false);
         updateDAssets();
+        updateBalances();
       }
       console.log(res);
     } catch (error) {
