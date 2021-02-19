@@ -15,7 +15,6 @@ import { toFixedNoRounding } from "../_common/FixedNoRounding";
 
 const DashboarAreaChart = ({ spark24H }: any) => {
   const CustomTooltip = ({ active, label, payload }: any) => {
-    console.log(payload);
     if (active) {
       if (payload) {
         const {

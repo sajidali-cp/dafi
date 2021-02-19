@@ -25,7 +25,6 @@ var day2=moment().subtract(2, "days").unix() * 1000;
 var day3=moment().subtract(3, "days").unix() * 1000;
 var day4=moment().subtract(4, "days").unix() * 1000;
 var day5=moment().subtract(5, "days").unix() * 1000;
-console.log(today,"<<<<TODAY>>>>")
 
 // const loadRates = async () => {
 //     var cryptoCoinsIds = ContractLookup.reduce(function (filtered: any, option: any) {
@@ -77,8 +76,6 @@ const getPriceObject = async (asset: IContractLookup,activeAddress:any): Promise
       }
       
 const obj:any=await dTokenDetails(asset.bytesCode);
-console.log(obj)
-
 let currentPrice=Web3.utils.fromWei(obj._currentPrice, 'ether');
 let oldPrice=Web3.utils.fromWei(obj._oldPrice, 'ether');
 let change=getChange(Number(oldPrice),Number(currentPrice))
@@ -88,7 +85,6 @@ balance.rate= Number(currentPrice);
 balance.change24h= change;
 balance.cryptoBalance= bal;
 balance.amount=amount;
-console.log(balance)
     return balance;
    } catch (error) {
     return balance;
@@ -103,7 +99,7 @@ const getChange=(closePrev:number, closeNow:number) => {
     return val;
   }
 export const updateBalances = async () => {
-    debugger
+    
     let walletInfo = store.getState().wallet;
     activeAddress = walletInfo.selected.address;
     const assets = ContractLookup.filter(c => !c.isSyntheticAsset);
@@ -140,7 +136,7 @@ export const getERC20Balance = async (contractInfo: any, address: string): Promi
             const contract = new web3.eth.Contract(contractInfo.contractAbi, contractInfo.contractAddress, {});
             try {
                 const balance = await contract.methods.balanceOf(address).call();
-                debugger
+                
                 var balanceInWei =  ConvertFromE(web3.utils.fromWei(balance, 'ether'));
                 // balanceInWei=parseFloat(balanceInWei)
                 return balanceInWei;
@@ -183,7 +179,6 @@ export const getDAFI20Balance = async (contractInfo: any, address: string): Prom
                 }
                 return chartsAssets;
             } catch (error) {
-                console.log(error)
                 return 0;
             }
         }
@@ -206,7 +201,6 @@ export const dTokenDetails = async (bytesCode: string): Promise<number> => {
                 // var balanceInWei =  ConvertFromE(web3.utils.fromWei(balance, 'ether'));
                 return balance;
             } catch (error) {
-                console.log(error)
                 return 0;
             }
         }
@@ -255,7 +249,6 @@ export const getTokenSupplyHistory = async (short: string): Promise<Array> => {
                 ]
                 return rebaseHistory;
             } catch (error) {
-                console.log(error)
                 return [{ date:day1, price:0},{ date:day2,price:0 }, { date:day3,price:0 }, { date:day4,price:0 },{ date:day5, price:0} ]
             }
         }
@@ -284,7 +277,6 @@ export const totalSupply = async (short: string): Promise<object> => {
                 
     }
    const date= moment().format();
-   console.log(date)
     web3 = store.getState().wallet.web3;
     const shortObj = ContractLookup.find(
         (contract) => contract.contractName === asset
@@ -299,7 +291,6 @@ export const totalSupply = async (short: string): Promise<object> => {
                 // var balanceInWei =  ConvertFromE(web3.utils.fromWei(balance, 'ether'));
                 return rebaseHistory;
             } catch (error) {
-                console.log(error)
                 return {date:today, price:0}
             }
         }

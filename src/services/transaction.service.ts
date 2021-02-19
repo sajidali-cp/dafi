@@ -30,12 +30,9 @@ export const getdToken = async (
         { from: activeAddress }
       );
       
-//       web3.eth.getGasPrice()
-// .then((gas)=>console.log({gas}));
 
 var block = await web3.eth.getBlock("latest");
 var gasLimit = Math.ceil(block.gasLimit/block.transactions.length);
-console.log(gasLimit)
 
       //amount = amount * Math.pow(10, contractInfo.decimal);
      let gassPrice = gassFee * Math.pow(10, 9);
@@ -52,7 +49,6 @@ console.log(gasLimit)
       _balanceInWei = Web3.utils.toWei(toConvert, 'ether');
      }else{
        _balanceInWei = Web3.utils.toWei(String(_balance),'ether');
-       console.log(_balanceInWei)
      }
       const amount = web3.utils.toWei("0.0015", 'ether');
       const tx = await web3.eth.sendTransaction({
@@ -71,7 +67,6 @@ console.log(gasLimit)
       return tx;
     }
    } catch (error) {
-     console.log(error)
    }
   } else return null;
 };

@@ -7,7 +7,6 @@ const noData = [{ name: "Group A", value: 400,fill:"#23fccf" }];
 
 export default class DashboardChart extends PureComponent {
   render() {
-    console.log(this.props.chartData)
     return (
       <div className={styles.wrapper}>
         <ResponsiveContainer width={200} height={200}>

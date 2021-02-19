@@ -51,14 +51,12 @@ export const initializeWeb3 = async (source: web3Sources): Promise<any> => {
       throw new Error("Error while accessing web3 provider.");
     }
   } catch (e) {
-    console.log(e)
   }
 };
 
 export const updateDAssets = async () => {
-  debugger
+  
   const accounts = await web3.eth.getAccounts();
-  console.log(accounts);
   if (accounts.length <= 0) {
     throw new Error("Error, Provider is not available");
   }
@@ -87,7 +85,7 @@ export const updateDAssets = async () => {
     let dBTCBalance: any = await getERC20Balance(dBTC, accounts[i]);
     let dETHBalance: any = await getERC20Balance(dETH, accounts[i]);
     let dSNXBalance: any = await getERC20Balance(dSNX, accounts[i]);
-    debugger
+    
     let DAFIObj: any = await getDAFI20Balance(DAFI, accounts[i]);
     let ETHBalance = await getETHBalance(accounts[i]);
     let walletObj: Wallet = {
@@ -178,6 +176,3 @@ export const initMEW = () => {
   
   // })
 }
-// export const deleteWeb3Wrapper = (): void => {
-//     web3Wrapper = null;
-// };

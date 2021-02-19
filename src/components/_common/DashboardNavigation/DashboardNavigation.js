@@ -16,7 +16,6 @@ import { useLocation, Link } from "react-router-dom";
 
 const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
   const location = useLocation();
-console.log("test")
   const alert = useAlert();
   const {
     selected: { address, isConnected },
@@ -29,7 +28,6 @@ console.log("test")
   };
   const [menuOpenState, setMenuOpenState] = useState(false);
   const stateChangeHandler = (newState) => {
-    console.log({ newState });
     setMenuOpenState(newState.isOpen);
   };
   const handleMenu = () => {

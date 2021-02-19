@@ -20,7 +20,6 @@ const useDashboard = () => {
     balances,
     chartData,
   } = useSelector((state: any) => state.wallet);
-  console.log(chartData);
   const [errorMessage, setErrorMessage] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeShort, setActiveShort] = useState("wBTC");
@@ -53,7 +52,6 @@ const useDashboard = () => {
     setUpcomponent(activeIndex);
   }, [balances]);
   const change = (e: any) => {
-    console.log(e.target.value);
     setSelectedFee(e.target.value);
   };
   const handleAssetSellection = async (short: any) => {
@@ -93,7 +91,6 @@ const useDashboard = () => {
 
   const handleCreate = async () => {
     setIsCreating(true);
-    console.log("function called________________");
     let _type;
     if (balances[activeIndex].short === "wBTC") {
       _type = "dBTC";
@@ -113,7 +110,7 @@ const useDashboard = () => {
         return;
       }
       const res = await getdToken(_type, state.amount, selectedFee).catch((e) =>
-        console.log(e)
+        
       );
       //@ts-ignore
       if (res.status) {
@@ -122,10 +119,8 @@ const useDashboard = () => {
         updateDAssets();
         updateBalances();
       }
-      console.log(res);
     } catch (error) {
       setIsCreating(false);
-      console.log(error);
     }
   };
   const isValidated = () => {
@@ -151,12 +146,6 @@ const useDashboard = () => {
     }
     return validated;
   };
-  // const spark24H = [
-  //   { price: 1, date: 1612767814 },
-  //   { price: 2, date: 1612767824 },
-  //   { price: 1, date: 1612767834 },
-  // ];
-  console.log(balances, "ooooooooooooooooooooooo");
 
   return {
     handleAssetSellection,

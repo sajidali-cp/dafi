@@ -108,8 +108,6 @@ export const fetchSynthVolumeInUSD = async (
     const exchanges = await fetchExchanges(periodInHours);
     let quoteCurrencyKeyCopy = quoteCurrencyKey.substr(quoteCurrencyKey.length - 1) === "b"? "s" + quoteCurrencyKey.slice(0, -1) : "s"+quoteCurrencyKey;
     let baseCurrencyKeyCopy = "s" + baseCurrencyKey.slice(0, -1);
-    // console.log("quoteCurrencyKey = ",quoteCurrencyKey,"  ____quoteCurrencyKeyCopy = ",quoteCurrencyKeyCopy)
-    // console.log("baseCurrencyKey = ",baseCurrencyKey,"  ____baseCurrencyKeyCopy = ",baseCurrencyKeyCopy)
    return calculateTotalVolumeForExchanges(
       baseCurrencyKeyCopy,
       quoteCurrencyKeyCopy,
