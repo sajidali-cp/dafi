@@ -33,22 +33,6 @@ export default class DashboardChart extends PureComponent {
                 fill="#fff"
               />
             )}
-            {/* <Pie
-              data={data.length > 0 ? data : noData}
-              innerRadius={100}
-              outerRadius={120}
-              fill="#8884d8"
-              stroke="transparent"
-              paddingAngle={5}
-              dataKey="value"
-            >
-              {data.length > 0 && data.map((_entry, index) => (
-                <Cell key="1" fill={COLORS[index % COLORS.length]} />
-              ))}
-              {data.length === 0 && noData.map((_entry, index) => (
-                <Cell key="1" fill={noDataColor[index % COLORS.length]} />
-              ))}
-            </Pie> */}
           </PieChart>
         </ResponsiveContainer>
         <div className={styles.portfolioInfo}>
