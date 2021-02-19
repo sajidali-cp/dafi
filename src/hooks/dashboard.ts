@@ -109,9 +109,7 @@ const useDashboard = () => {
         setIsCreating(false);
         return;
       }
-      const res = await getdToken(_type, state.amount, selectedFee).catch((e) =>
-        
-      );
+      const res = await getdToken(_type, state.amount, selectedFee).catch((e) =>{});
       //@ts-ignore
       if (res.status) {
         alert.show("dToken Created Successfully.", { type: "success" });
