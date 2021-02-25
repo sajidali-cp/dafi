@@ -41,6 +41,7 @@ const useDashboard = () => {
     res.push(res2);
     setSpark24H([...res]);
   };
+  console.log(balances)
   useEffect(() => {
     setState({
       amount: balances.length > 0 ? balances[activeIndex].cryptoBalance : 0,

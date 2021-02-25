@@ -64,6 +64,7 @@ const getPriceObject = async (asset: IContractLookup,activeAddress:any): Promise
         icon: `/${asset.icon}`
     }
    try {
+       debugger
     const contractInfo = ContractLookup.find(
         ( contract) => contract.contractName === asset.contractName
       );
@@ -209,6 +210,51 @@ export const dTokenDetails = async (bytesCode: string): Promise<number> => {
     }
 }
 
+// @ts-ignore
+export const getActualBalance = async (short: string): Promise<number> => {
+    web3 = store.getState().wallet.web3;
+    let asset:any;
+    switch (short){
+        case "wBTC":
+            asset="dBTC";
+            break;
+        case "ETH":
+            asset="dETH";
+            break;
+        case "LINK":
+           asset="dLINK";
+            break; 
+        case "SNX":
+           asset="dSNX";
+            break; 
+                
+    }
+    const contractInfo = ContractLookup.find(
+        (contract) => contract.contractName === asset
+      );
+      let walletInfo = store.getState().wallet;
+    activeAddress = walletInfo.selected.address;
+    if (web3.currentProvider) {
+        if (contractInfo) {
+            const contract = new web3.eth.Contract(contractInfo.contractAbi, contractInfo.contractAddress, {});
+            try {
+                debugger
+                const balance = await contract.methods.balanceCheck(activeAddress).call();
+                
+                var balanceInWei =  ConvertFromE(web3.utils.fromWei(balance, 'ether'));
+                // balanceInWei=parseFloat(balanceInWei)
+                return balanceInWei;
+                // let bal: number = Number(balanceInWei);// / Math.pow(10, contractInfo.decimal)
+                // return bal;
+            } catch (error) {
+                return 0;
+            }
+        }
+    } else {
+        return 0
+    }
+}
+
 //@ts-ignore
 export const getTokenSupplyHistory = async (short: string): Promise<Array> => {
     
@@ -219,6 +265,8 @@ export const getTokenSupplyHistory = async (short: string): Promise<Array> => {
       const shortObj = ContractLookup.find(
         (contract) => contract.contractName === short
       );
+      debugger
+      const bal=await getActualBalance(short)
     if (web3.currentProvider) {
         if (DAFIPLATFORM) {
             const contract = new web3.eth.Contract(DAFIPLATFORM.contractAbi, DAFIPLATFORM.contractAddress, {});
@@ -228,23 +276,23 @@ export const getTokenSupplyHistory = async (short: string): Promise<Array> => {
                 const rebaseHistory=[
                     {
                         date:day1,
-                        price:Number(web3.utils.fromWei(balance._day1, 'ether'))
+                        price:Number(web3.utils.fromWei(balance._day1, 'ether')) * Number(bal)
                     },
                     {
                         date:day2,
-                        price:Number(web3.utils.fromWei(balance._day2, 'ether'))
+                        price:Number(web3.utils.fromWei(balance._day2, 'ether')) * Number(bal)
                     },
                     {
                         date:day3,
-                        price:Number(web3.utils.fromWei(balance._day3, 'ether'))
+                        price:Number(web3.utils.fromWei(balance._day3, 'ether')) * Number(bal)
                     },
                     {
                         date:day4,
-                        price:Number(web3.utils.fromWei(balance._day4, 'ether'))
+                        price:Number(web3.utils.fromWei(balance._day4, 'ether')) * Number(bal)
                     },
                     {
                         date:day5,
-                        price:Number(web3.utils.fromWei(balance._day5, 'ether'))
+                        price:Number(web3.utils.fromWei(balance._day5, 'ether')) * Number(bal)
                     },
                 ]
                 return rebaseHistory;
@@ -281,12 +329,14 @@ export const totalSupply = async (short: string): Promise<object> => {
     const shortObj = ContractLookup.find(
         (contract) => contract.contractName === asset
       );
-      
+      let walletInfo = store.getState().wallet;
+    activeAddress = walletInfo.selected.address;
     if (web3.currentProvider) {
         if (shortObj) {
             const contract = new web3.eth.Contract(shortObj.contractAbi, shortObj.contractAddress, {});
             try {
-                const balance = await contract.methods.totalSupply().call();
+                debugger
+                const balance = await contract.methods.balanceOf(activeAddress).call();
                 const rebaseHistory={date:today, price:Number(web3.utils.fromWei(balance, 'ether'))}
                 // var balanceInWei =  ConvertFromE(web3.utils.fromWei(balance, 'ether'));
                 return rebaseHistory;

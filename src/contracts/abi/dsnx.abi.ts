@@ -87,24 +87,6 @@ export const dSNXAbi: AbiItem | AbiItem[] = [
   },
   {
     constant: true,
-    inputs: [],
-    name: "_oldSupply",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "_totalSupply",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
     inputs: [
       { internalType: "address", name: "_owner", type: "address" },
       { internalType: "address", name: "_spender", type: "address" },
@@ -169,15 +151,6 @@ export const dSNXAbi: AbiItem | AbiItem[] = [
     type: "function",
   },
   {
-    constant: true,
-    inputs: [],
-    name: "getTotalSupply",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
     constant: false,
     inputs: [
       { internalType: "address", name: "_spender", type: "address" },
@@ -221,7 +194,9 @@ export const dSNXAbi: AbiItem | AbiItem[] = [
   },
   {
     constant: false,
-    inputs: [{ internalType: "uint256", name: "newSupply", type: "uint256" }],
+    inputs: [
+      { internalType: "uint256", name: "_demandFactor", type: "uint256" },
+    ],
     name: "rebase",
     outputs: [],
     payable: false,
