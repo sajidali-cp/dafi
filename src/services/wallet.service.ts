@@ -266,12 +266,14 @@ export const getTokenSupplyHistory = async (short: string): Promise<Array> => {
         (contract) => contract.contractName === short
       );
       debugger
+      let walletInfo = store.getState().wallet;
+    activeAddress = walletInfo.selected.address;
       const bal=await getActualBalance(short)
     if (web3.currentProvider) {
         if (DAFIPLATFORM) {
             const contract = new web3.eth.Contract(DAFIPLATFORM.contractAbi, DAFIPLATFORM.contractAddress, {});
             try {
-                const balance = await contract.methods.getTokenSupplyHistory(shortObj?.bytesCode).call();
+                const balance = await contract.methods.getTokenSupplyHistory(shortObj?.bytesCode,activeAddress).call();
                 // var balanceInWei =  ConvertFromE(web3.utils.fromWei(balance, 'ether'));
                 const rebaseHistory=[
                     {
