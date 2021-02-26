@@ -130,6 +130,18 @@ export const dETHAbi: AbiItem | AbiItem[] = [
     type: "function",
   },
   {
+    constant: false,
+    inputs: [
+      { internalType: "uint256", name: "_value", type: "uint256" },
+      { internalType: "address", name: "_beneficiary", type: "address" },
+    ],
+    name: "burn",
+    outputs: [],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
     constant: true,
     inputs: [],
     name: "decimals",

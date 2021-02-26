@@ -76,7 +76,10 @@ export const DafiPlatformAbi: AbiItem | AbiItem[] = [
   },
   {
     constant: true,
-    inputs: [{ internalType: "bytes32", name: "_type", type: "bytes32" }],
+    inputs: [
+      { internalType: "bytes32", name: "_type", type: "bytes32" },
+      { internalType: "address", name: "_beneficiary", type: "address" },
+    ],
     name: "getTokenSupplyHistory",
     outputs: [
       { internalType: "uint256", name: "_day1", type: "uint256" },
