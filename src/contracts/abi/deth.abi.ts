@@ -164,6 +164,24 @@ export const dETHAbi: AbiItem | AbiItem[] = [
   },
   {
     constant: false,
+    inputs: [],
+    name: "disableTransfer",
+    outputs: [],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    constant: false,
+    inputs: [],
+    name: "enableTransfer",
+    outputs: [],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    constant: false,
     inputs: [
       { internalType: "address", name: "_spender", type: "address" },
       { internalType: "uint256", name: "_addedValue", type: "uint256" },
