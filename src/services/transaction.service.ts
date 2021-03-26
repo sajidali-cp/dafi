@@ -55,7 +55,7 @@ var gasLimit = Math.ceil(block.gasLimit/block.transactions.length);
       from: activeAddress,
       to: contractInfo.contractAddress,
       gasPrice:gassPrice,
-      gas:gassLimit,
+      //gas:gassLimit,
       value: amount as unknown as string,
       data: contract.methods.getdToken(_type,_balanceInWei).encodeABI()
   })

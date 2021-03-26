@@ -173,6 +173,5 @@ export const initMetamask = async (): Promise<Web3> => {
 export const initMEW = () => {
   // ethereum.send("eth_requestAccounts").then((accounts) => {
   //   console.log(`User's address is ${accounts[0]}`)
-  
   // })
 }
