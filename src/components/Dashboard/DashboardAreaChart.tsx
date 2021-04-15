@@ -72,7 +72,7 @@ const DashboarAreaChart = ({ spark24H }: any) => {
           <YAxis
             tickCount={5}
             hide={false}
-            axisLine={false}
+            axisLine={true}
             tickLine={false}
             fontSize={14}
             fontWeight={500}

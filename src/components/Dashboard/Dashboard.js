@@ -6,9 +6,10 @@ import useDashboard from "../../hooks/dashboard";
 import DashboardWAsset from "./DashbordWAsset";
 import DashboarAreaChart from "./DashboardAreaChart";
 import CreateDAsset from "./CreateDAsset";
-
+import NumberFormat from "react-number-format";
+import { toFixedNoRounding } from "../_common/FixedNoRounding";
+import Loader from "react-loader-spinner";
 const Dashboard = () => {
-
   const {
     handleAssetSellection,
     activeShort,
@@ -26,7 +27,7 @@ const Dashboard = () => {
     handleCreate,
     isCreating,
     activeIndex,
-  }=useDashboard()
+  } = useDashboard();
   return (
     <div className={styles.wrapper}>
       <DashboardNavigation
@@ -34,18 +35,66 @@ const Dashboard = () => {
         activeShort={activeShort}
       />
       <div className={styles.rightWrapper}>
-        <div className={styles.midSection}>
-          <div className={styles.midTop}>
-            <div className={styles.chart}>
-              <DashboardChart chartData={chartData} />
+        <div className={styles.topSection}>
+          <div className={styles.leftSection}>
+            <div className={styles.flexCol}>
+              <div className={styles.chart}>
+                <DashboardChart chartData={chartData} />
+              </div>
+              <div className={styles.flexRow}>
+                <img src="/assets/Icons/Group 5874.svg"></img>
+                <div className={styles.amount}>0.00</div>
+              </div>
             </div>
-            <DashboardWAsset selected={selected}/>
+            <DashboardWAsset selected={selected} />
+            <div className={styles.createAsset}>
+              <div className={styles.heading}>Create a dToken</div>
+              <div className={styles.inputDiv}>
+                <div className={styles.inputText}>Amount</div>
+                <input
+                  type="number"
+                  placeholder="0.00  "
+                  value={state.amount}
+                  onChange={handleChange}
+                />
+                {errorMessage ? (
+                  <div className={styles.errorMessage}>{errorMessage}</div>
+                ) : null}
+              </div>
+              <div className={styles.create} onClick={handleCreate}>
+                {isCreating ? (
+                  <Loader type="Bars" color="#ffffff" height={18} width={20} />
+                ) : (
+                  "Create"
+                )}
+              </div>
+            </div>
           </div>
-          <div className={styles.midBottom}>
-          <DashboarAreaChart spark24H={spark24H}/>
-           </div>
+          <CreateDAsset
+            balances={balances}
+            isConnected={isConnected}
+            state={state}
+            handleChange={handleChange}
+            errorMessage={errorMessage}
+            change={change}
+            selectedFee={selectedFee}
+            gassFee={gassFee}
+            handleCreate={handleCreate}
+            isCreating={isCreating}
+            activeIndex={activeIndex}
+          />
         </div>
-      <CreateDAsset 
+        <div className={styles.bottomSection}>
+          <DashboarAreaChart spark24H={spark24H} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Dashboard;
+{
+  /* <CreateDAsset 
       balances={balances}
       isConnected={isConnected}
       state={state}
@@ -57,10 +106,7 @@ const Dashboard = () => {
       handleCreate={handleCreate}
       isCreating={isCreating}
       activeIndex={activeIndex}
-      />
-      </div>
-    </div>
-  );
-};
+      /> */
+}
 
-export default Dashboard;
+// <DashboarAreaChart spark24H={spark24H}/>

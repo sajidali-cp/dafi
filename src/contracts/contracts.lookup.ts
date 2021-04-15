@@ -125,7 +125,7 @@ export const ContractLookup:IContractLookup[] = [
         contractAddress: "0xd69fC7F48Ad1FFd0D9B8775889a1ED61555BA7e1",
         marketRateApiID: "",
         oracleRateID: "",
-        fullName: "Synthetix",
+        fullName: "AAVE",
         decimal:18,
         bytesCode:"",
         contractAbi: dSNXAbi,

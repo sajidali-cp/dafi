@@ -55,21 +55,25 @@ const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
       icon: "assets/images/currency1.svg",
       name: "wBitcoin",
       short: "wBTC",
+      token:"ERC20"
     },
     {
       icon: "assets/images/currency2.svg",
       name: "Ethereum",
       short: "ETH",
-    },
-    {
-      icon: "assets/images/snx.png",
-      name: "Synthetix",
-      short: "SNX",
+      token:"ETH"
     },
     {
       icon: "assets/images/currency3.svg",
+      name: "AAVE",
+      short: "SNX",
+      token:"ERC20"
+    },
+    {
+      icon: "assets/images/currency4.svg",
       name: "Chainlink",
       short: "LINK",
+      token:"ERC20"
     },
   ];
 
@@ -113,7 +117,7 @@ const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
                 </div>
                 <div className="iconInfo">
                   <div className="name">{item.name}</div>
-                  <div className="info">{item.short}</div>
+                  <div className="info">{item.token}</div>
                 </div>
               </div>
             ))}
@@ -164,7 +168,7 @@ const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
                   </div>
                   <div className={styles.webiconInfo}>
                     <div className={styles.webname}>{item.name}</div>
-                    <div className={styles.webinfo}>{item.short}</div>
+                    <div className={styles.webinfo}>{item.token}</div>
                   </div>
                 </div>
               ))}

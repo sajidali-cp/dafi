@@ -21,52 +21,6 @@ const CreateDAsset = ({
     <div className={styles.rightSection}>
       {balances.length > 0 && isConnected ? (
         <>
-          <div className={styles.createAsset}>
-            <div className={styles.heading}>Create a Synthetic dToken</div>
-            <div className={styles.inputDiv}>
-              <div className={styles.inputText}>Amount</div>
-              <input
-                type="number"
-                placeholder="0.00  "
-                value={state.amount}
-                onChange={handleChange}
-              />
-              {errorMessage ? (
-                <div className={styles.errorMessage}>{errorMessage}</div>
-              ) : null}
-            </div>
-            <div className={styles.usdDiv}>
-              <div className={styles.text}>USD :</div>
-              <div className={styles.value}>
-                <NumberFormat
-                  value={toFixedNoRounding(state.usdValue, 2)}
-                  displayType={"text"}
-                  thousandSeparator={true}
-                />
-              </div>
-            </div>
-            <div className={styles.fee}>
-              <div className={styles.feeText}>GAS PRICE (GWE) :</div>
-              <div className={styles.feeDetail}>
-                <div className={styles.feeInUSD}>
-                  <select onChange={change} value={selectedFee}>
-                    {gassFee.map((item: any, i: any) => (
-                      <option key={i} value={item}>
-                        {item}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div className={styles.create} onClick={handleCreate}>
-              {isCreating ? (
-                <Loader type="Bars" color="#ffffff" height={18} width={20} />
-              ) : (
-                "Create"
-              )}
-            </div>
-          </div>
           <div className={styles.assetData}>
             <div className={styles.asset}>
               <div className={styles.icon}>

@@ -5,58 +5,102 @@
     width: 100%;
     padding: 20px;
     display: flex;
+    background-color: #f3f6ff;
     flex-direction: column;
     row-gap: 20px;
-    .midSection {
+    .topSection {
       width: 100%;
       height: 100%;
+      // max-height: 400px;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       row-gap: 20px;
-      .midTop {
-        background-color: #191919;
+      .leftSection {
+        background-color: #fffffd;
+        width: 100%;
         height: 100%;
         min-height: 364.33px;
         border-radius: 10px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         flex-direction: column;
         row-gap: 20px;
-        .chart {
-          height: 245px;
+        padding: 20px;
+        .flexCol {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          .chart {
+            height: 200px;
+          }
+          .flexRow {
+            display: flex;
+            align-items: center;
+            .amount {
+              margin-left: 10px;
+              font-weight: normal;
+              font-size: 35px;
+              color: #000;
+            }
+          }
         }
         .wAssetsWrapper {
           display: flex;
           flex-direction: column;
+          justify-content: space-between;
           width: 100%;
-          .leftRightBorder {
-            border-top: 2px solid #222;
-            border-bottom: 2px solid #222;
-          }
-          .leftBorder {
-            border-top: 2px solid #222;
-          }
-          .rightBorder {
-            border-bottom: 2px solid #222;
-          }
+          height: 320px;
           .wAssetsDiv {
-            height: 200px;
+            // height: 66px;
+            padding: 10px;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             row-gap: 10px;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
+            border-radius: 8px;
+            background: #f3f6ff;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
             .wAssetsBalance {
+              margin: 0;
+              display: flex;
+              align-items: center;
               font-weight: normal;
-              font-size: 35px;
               letter-spacing: 0em;
-              color: #e0e0e0;
+              font-size: 20px;
+              text-align: left;
+              .grayColor {
+                font-size: 16px;
+                color: #929399;
+              }
             }
-            .wAssetsBorder {
-              width: 18px;
-              height: 0px;
-              background: transparent;
+            .positiveColor {
+              color: #008753;
+            }
+            .negativeColor {
+              color: #e94c48;
+            }
+            .percentage {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 50px;
+              height: 20px;
+              border-radius: 3px;
+              font-weight: normal;
+              font-size: 12px;
+              text-align: left;
+              color: #fff;
+            }
+            .positive {
+              background: #008753;
+            }
+            .negative {
+              background: #e94c48;
             }
             .dafi {
               height: 4px;
@@ -78,370 +122,26 @@
               height: 4px;
               background-color: #2db2dc;
             }
-            .wAssetsName {
-              font-weight: 500;
-              font-size: 14px;
-              color: #fff;
-            }
           }
-        }
-      }
-      .midBottom {
-        height: 45%;
-        min-height: 298.08px;
-        overflow: auto;
-        background-color: #191919;
-        border-radius: 10px;
-        .chart {
-          height: 100%;
-          width: 100%;
-        }
-      }
-    }
-    .rightSection {
-      width: 100%;
-      height: 100%;
-      background-color: #191919;
-      border-radius: 10px;
-      padding: 10px;
-      .connectYourWallet{
-        height: 100%;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .createAsset {
-        height: 45%;
-        min-height: 300px;
-        width: 100%;
-        border-radius: 10px;
-        background: #1f1f1f;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        padding: 30px;
-        .heading {
-          font-weight: 500;
-          font-size: 18px;
-          color: #fff;
-        }
-        .inputDiv {
-          display: flex;
-          flex-direction: column;
-          row-gap: 5px;
-          .inputText {
-            font-weight: normal;
-            font-size: 14px;
-            text-align: left;
-            color: #f5f5f5;
-          }
-          input {
-            padding: 10px;
-            color: #555555;
-            outline: none;
-            border-radius: 5px;
-            border: 1px solid transparent;
-            width: 300px;
-            height: 40px;
-            background: #2a2a2a;
-          }
-          .errorMessage{
-            color:red;
-            font-style: italic;
-            font-size: 10px;
-            text-align: center;
-            margin: 10px;
-          }
-        }
-        .usdDiv {
-          display: flex;
-          flex-direction: row;
-          column-gap: 5px;
-          .text {
-            font-size: 14px;
-            color: white;
-          }
-          .value {
-            font-size: 14px;
-            color: #555555;
-          }
-        }
-        .fee {
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          column-gap: 20px;
-          .feeText {
-            font-size: 12px;
-            text-align: right;
-            width: 110px;
-          }
-          .feeDetail {
-            display: flex;
-            align-items: center;
-            column-gap: 20px;
-            .feeInNative {
-              font-size: 12px;
-              text-align: right;
-            }
-            .feeInUSD {
-              font-size: 12px;
-              text-align: left;
-              color: #5f5f5f;
-              select {
-                padding: 5px;
-                border-radius: 5px;
-                outline: none;
-                border: 1px solid transparent;
-                background-color: #2a2a2a;
-                color: white;
-              }
-            }
-          }
-        }
-        .create {
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 10px;
-          width: 152px;
-          height: 40px;
-          background: #4b7af6;
-        }
-      }
-      .assetData {
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        row-gap: 20px;
-        .asset {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          row-gap: 10px;
-          .icon {
-            width: 100px;
-            height: 100px;
-            background: transparent;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            img {
-              max-width: 100%;
-              height: auto;
-            }
-          }
-          .nameShortDiv {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            .name {
-              font-weight: 500;
-              font-size: 17px;
-              letter-spacing: 0em;
-              text-align: left;
-              color: #fff;
-            }
-            .short {
-              font-weight: normal;
-              font-size: 12px;
-              letter-spacing: 0em;
-              text-align: left;
-              color: #555555;
-            }
-          }
-        }
-        .assetInfo {
-          width: 100%;
-          .topBorder {
-            border-top: 1px solid #262626;
-          }
-          .bottomBorder {
-            border-bottom: 1px solid #262626;
-          }
-          .keyValueRow {
-            padding: 10px;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            .key {
-              font-weight: 500;
-              font-size: 14px;
-              color: #fff;
-            }
-            .value {
-              font-weight: 500;
-              font-size: 14px;
-            }
-            .priceTextColor {
-              color: white;
-            }
-            .changeTextColor {
-              color: #47e910;
-            }
-            .dangerTextColor{
-              color:red;
-            }
-            .balanceTextColor {
-              color: #e98d12;
-            }
-            .valueTextColor {
-              color: white;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and(min-width:1200px) {
-  .wrapper {
-    display: flex;
-    flex-direction: row;
-    .rightWrapper {
-      width: 80%;
-      padding: 20px;
-      display: flex;
-      flex-direction: row;
-      column-gap: 20px;
-      .midSection {
-        width: 70%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        row-gap: 20px;
-        .midTop {
-          background-color: #191919;
-          height: 55%;
-          min-height: 364.33px;
-          border-radius: 10px;
-          display: flex;
-          flex-direction: column;
-          padding: 20px;
-          row-gap: 20px;
-          .chart {
-            height: 245px;
-          }
-          .wAssetsWrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: row;
-            width: 100%;
-            .leftRightBorder {
-              border-top: 0 solid #222;
-              border-bottom: 0 solid #222;
-              border-left: 2px solid #222;
-              border-right: 2px solid #222;
-            }
-            .leftBorder {
-              border-top: 0 solid #222;
-              border-left: 2px solid #222;
-            }
-            .rightBorder {
-              border-bottom: 0 solid #222;
-              border-right: 2px solid #222;
-            }
-            .wAssetsDiv {
-              height: 100px;
-              width: 200px;
-              display: flex;
-              flex-direction: column;
-              row-gap: 10px;
-              align-items: center;
-              justify-content: center;
-              .wAssetsBalance {
-                font-weight: normal;
-                font-size: 25px;
-                letter-spacing: 0em;
-                color: #e0e0e0;
-              }
-              .wAssetsBorder {
-                width: 18px;
-                height: 0px;
-                background: transparent;
-              }
-              .dafi {
-                height: 4px;
-                background-color: #24a79a;
-              }
-              .dBTC {
-                height: 4px;
-                background-color: #f9a72d;
-              }
-              .dEther {
-                height: 4px;
-                background-color: #4c56a8;
-              }
-              .dUniswap {
-                height: 4px;
-                background-color: #bf2071;
-              }
-              .dLINK {
-                height: 4px;
-                background-color: #2db2dc;
-              }
-              .wAssetsName {
-                font-weight: 500;
-                font-size: 14px;
-                color: #fff;
-              }
-            }
-          }
-        }
-        .midBottom {
-          height: 45%;
-          min-height: 298.08px;
-          background-color: #191919;
-          border-radius: 10px;
-          padding-right: 30px;
-          padding-top: 30px;
-          .chart {
-            height: 100%;
-            width: 100%;
-          }
-        }
-      }
-      .rightSection {
-        width: 30%;
-        height: 100%;
-        background-color: #191919;
-        border-radius: 10px;
-        padding: 10px;
-        .connectYourWallet{
-          height: 100%;
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
         }
         .createAsset {
+          padding: 0 10px;
           height: 45%;
+          min-height: 300px;
           width: 100%;
-          border-radius: 10px;
-          background: #1f1f1f;
+          border-radius: 0 15px;
+          background: transparent;
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: space-between;
-          padding: 30px;
+          justify-content: flex-start;
           .heading {
             font-weight: 500;
             font-size: 18px;
-            color: #fff;
+            color: #000;
           }
           .inputDiv {
+            margin: 30px 0;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -450,76 +150,53 @@
               font-weight: normal;
               font-size: 14px;
               text-align: left;
-              color: #f5f5f5;
+              color: #000;
             }
             input {
               padding: 10px;
               color: #555555;
               outline: none;
               border-radius: 5px;
-              border: 1px solid transparent;
               width: 100%;
               height: 40px;
-              background: #2a2a2a;
+              background: #fff;
+              border: 1px solid #cbcbc9;
+            }
+            .errorMessage {
+              color: red;
+              font-style: italic;
+              font-size: 10px;
+              text-align: center;
+              margin: 10px;
             }
           }
-          .usdDiv {
-            display: flex;
-            flex-direction: row;
-            column-gap: 5px;
-            .text {
-              font-size: 14px;
-              color: white;
-            }
-            .value {
-              font-size: 14px;
-              color: #555555;
-            }
-          }
-          .fee {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            column-gap: 20px;
-            .feeText {
-              font-size: 12px;
-              text-align: right;
-              width: 110px;
-            }
-            .feeDetail {
-              display: flex;
-              align-items: center;
-              column-gap: 20px;
-              .feeInNative {
-                font-size: 12px;
-                text-align: right;
-              }
-              .feeInUSD {
-                font-size: 12px;
-                text-align: left;
-                color: #5f5f5f;
-                select {
-                  padding: 5px;
-                  border-radius: 5px;
-                  outline: none;
-                  border: 1px solid transparent;
-                  background-color: #2a2a2a;
-                  color: white;
-                }
-              }
-            }
-          }
+
           .create {
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 10px;
-            width: 152px;
+            width: 100%;
             height: 40px;
-            background: #4b7af6;
+            color: black;
+            background: #00dffe;
           }
+        }
+      }
+      .rightSection {
+        width: 100%;
+        height: 100%;
+        background-color: #fffffd;
+        border-radius: 10px;
+        padding: 10px;
+        .connectYourWallet {
+          height: 100%;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: black;
         }
         .assetData {
           padding: 20px;
@@ -535,21 +212,27 @@
             justify-content: center;
             row-gap: 10px;
             .icon {
-              width: 100px;
-              height: 100px;
+              width: 115px;
+              height: 115px;
               background: transparent;
+              display: flex;
+              align-items: center;
+              justify-content: center;
               img {
-                max-width: 100%;
-                height: auto;
+                width: 100%;
               }
             }
             .nameShortDiv {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
               .name {
                 font-weight: 500;
                 font-size: 17px;
                 letter-spacing: 0em;
                 text-align: left;
-                color: #fff;
+                color: #000;
               }
               .short {
                 font-weight: normal;
@@ -557,6 +240,13 @@
                 letter-spacing: 0em;
                 text-align: left;
                 color: #555555;
+              }
+              .token {
+                font-weight: normal;
+                font-size: 12px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #000;
               }
             }
           }
@@ -578,26 +268,357 @@
               .key {
                 font-weight: 500;
                 font-size: 14px;
-                color: #fff;
+                color: #000;
               }
               .value {
                 font-weight: 500;
                 font-size: 14px;
+                color: #000;
               }
-              .priceTextColor {
-                color: white;
-              }
+              // .priceTextColor {
+              //   color: #000;
+              // }
               .changeTextColor {
                 color: #47e910;
+              }
+              .dangerTextColor {
+                color: red;
               }
               .balanceTextColor {
                 color: #e98d12;
               }
-              .valueTextColor {
-                color: white;
+              // .valueTextColor {
+              //   color: white;
+              // }
+            }
+          }
+        }
+      }
+    }
+    .bottomSection {
+      padding: 20px;
+      height: 45%;
+      min-height: 298.08px;
+      width: 100%;
+      overflow: auto;
+      background-color: #fffffd;
+      border-radius: 10px;
+      .chart {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and(min-width:1200px) {
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    .rightWrapper {
+      width: 80%;
+      padding: 20px;
+      display: flex;
+      background-color: #f3f6ff;
+      flex-direction: column;
+      row-gap: 20px;
+      .topSection {
+        width: 100%;
+        height: 100%;
+        max-height: 400px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        row-gap: 20px;
+        .leftSection {
+          background-color: #fffffd;
+          width: 68%;
+          height: 100%;
+          min-height: 364.33px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-direction: row;
+          row-gap: 20px;
+          padding: 20px;
+          .flexCol {
+            width: 26%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .chart {
+              height: 200px;
+            }
+            .flexRow {
+              display: flex;
+              align-items: center;
+              .amount {
+                margin-left: 10px;
+                font-weight: normal;
+                font-size: 35px;
+                color: #000;
               }
             }
           }
+          .wAssetsWrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 37%;
+            height: 320px;
+            .wAssetsDiv {
+              // height: 66px;
+              padding: 10px;
+              display: flex;
+              flex-direction: row;
+              row-gap: 10px;
+              align-items: center;
+              justify-content: space-between;
+              border-radius: 8px;
+              background: #f3f6ff;
+              box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+              .wAssetsBalance {
+                margin: 0;
+                display: flex;
+                align-items: center;
+                font-weight: normal;
+                letter-spacing: 0em;
+                font-size: 20px;
+                text-align: left;
+                .grayColor {
+                  font-size: 16px;
+                  color: #929399;
+                }
+              }
+              .positiveColor {
+                color: #008753;
+              }
+              .negativeColor {
+                color: #e94c48;
+              }
+              .percentage {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
+                height: 20px;
+                border-radius: 3px;
+                font-weight: normal;
+                font-size: 12px;
+                text-align: left;
+                color: #fff;
+              }
+              .positive {
+                background: #008753;
+              }
+              .negative {
+                background: #e94c48;
+              }
+              .dafi {
+                height: 4px;
+                background-color: #24a79a;
+              }
+              .dBTC {
+                height: 4px;
+                background-color: #f9a72d;
+              }
+              .dEther {
+                height: 4px;
+                background-color: #4c56a8;
+              }
+              .dUniswap {
+                height: 4px;
+                background-color: #bf2071;
+              }
+              .dLINK {
+                height: 4px;
+                background-color: #2db2dc;
+              }
+            }
+          }
+          .createAsset {
+            padding: 0 10px;
+            height: 45%;
+            min-height: 300px;
+            width: 32%;
+            border-radius: 0 15px;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            .heading {
+              font-weight: 500;
+              font-size: 18px;
+              color: #000;
+            }
+            .inputDiv {
+              margin: 30px 0;
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              row-gap: 5px;
+              .inputText {
+                font-weight: normal;
+                font-size: 14px;
+                text-align: left;
+                color: #000;
+              }
+              input {
+                padding: 10px;
+                color: #555555;
+                outline: none;
+                border-radius: 5px;
+                width: 100%;
+                height: 40px;
+                background: #fff;
+                border: 1px solid #cbcbc9;
+              }
+              .errorMessage {
+                color: red;
+                font-style: italic;
+                font-size: 10px;
+                text-align: center;
+                margin: 10px;
+              }
+            }
+  
+            .create {
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 10px;
+              width: 100%;
+              height: 40px;
+              color: black;
+              background: #00dffe;
+            }
+          }
+        }
+        .rightSection {
+          width: 30%;
+          height: 100%;
+          background-color: #fffffd;
+          border-radius: 10px;
+          padding: 10px;
+          .connectYourWallet {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+          }
+          .assetData {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: 20px;
+            .asset {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              row-gap: 10px;
+              .icon {
+                width: 115px;
+                height: 115px;
+                background: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img {
+                  width: 100%;
+                }
+              }
+              .nameShortDiv {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                .name {
+                  font-weight: 500;
+                  font-size: 17px;
+                  letter-spacing: 0em;
+                  text-align: left;
+                  color: #000;
+                }
+                .short {
+                  font-weight: normal;
+                  font-size: 12px;
+                  letter-spacing: 0em;
+                  text-align: left;
+                  color: #555555;
+                }
+                .token {
+                  font-weight: normal;
+                  font-size: 12px;
+                  letter-spacing: 0em;
+                  text-align: left;
+                  color: #000;
+                }
+              }
+            }
+            .assetInfo {
+              width: 100%;
+              .topBorder {
+                border-top: 1px solid #262626;
+              }
+              .bottomBorder {
+                border-bottom: 1px solid #262626;
+              }
+              .keyValueRow {
+                padding: 10px;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                .key {
+                  font-weight: 500;
+                  font-size: 14px;
+                  color: #000;
+                }
+                .value {
+                  font-weight: 500;
+                  font-size: 14px;
+                  color: #000;
+                }
+                // .priceTextColor {
+                //   color: #000;
+                // }
+                .changeTextColor {
+                  color: #47e910;
+                }
+                .dangerTextColor {
+                  color: red;
+                }
+                .balanceTextColor {
+                  color: #e98d12;
+                }
+                // .valueTextColor {
+                //   color: white;
+                // }
+              }
+            }
+          }
+        }
+      }
+      .bottomSection {
+        height: 45%;
+        min-height: 298.08px;
+        width: 100%;
+        overflow: auto;
+        background-color: #fffffd;
+        border-radius: 10px;
+        .chart {
+          height: 100%;
+          width: 100%;
         }
       }
     }
@@ -613,13 +634,14 @@
   text-align: center;
 }
 .itemStyle {
-  color: "white";
   font-size: 12px;
   padding: 3px 5px;
+  color: #2EC1B2;
 }
 
 .labelStyle {
   text-transform: capitalize;
+  color: #2EC1B2;
 }
 
 //Modal Styling

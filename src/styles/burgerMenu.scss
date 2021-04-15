@@ -44,7 +44,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* General sidebar styles */
 .bm-menu {
-  background: #151515;
+  background: #2c3d4f;;
   padding: 2.5em 1.5em 0;
 }
 
@@ -122,23 +122,28 @@ Note: Beware of modifying this element as it can break the animations - you shou
     font-weight: normal;
     font-size: 14px;
     text-align: left;
-    color: #5c5c5c;
+    color: #fff;
     margin-bottom: 20px;
   }
   .assetActiveDiv {
-    background: #101010;
-    border-radius: 5px;
+    border-bottom: 2px solid transparent !important;
+    background-color: #2a6469;
+  }
+  .assetDiv:last-child {
+    border-bottom: 2px solid transparent;
   }
   .assetDiv {
-    padding: 10px;
+    cursor: pointer;
+    // border:1px solid #5C6977;
+    border-bottom: 2px solid #5c6977;
+    padding: 20px 10px;
     display: flex;
     flex-direction: row;
     column-gap: 10px;
     flex-wrap: nowrap;
-    margin-bottom: 20px;
     .icon {
       width: 30px;
-      img{
+      img {
         max-width: 100%;
         height: auto;
       }
@@ -149,7 +154,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
       justify-content: center;
       .name {
         font-weight: 500;
-        font-size: 12px;
+        font-size: 15px;
         letter-spacing: 0em;
         text-align: left;
         color: #fff;
@@ -159,16 +164,25 @@ Note: Beware of modifying this element as it can break the animations - you shou
         font-size: 12px;
         letter-spacing: 0em;
         text-align: left;
-        color: #686868;
+        color: #747f8b;
       }
     }
   }
   .learnText {
-    font-weight: 600;
-    text-decoration: underline;
-    font-size: 14px;
-    text-align: center;
-    color: #fff;
+    // font-weight: 600;
+    // text-decoration: underline;
+    // font-size: 14px;
+    // text-align: center;
+    // color: #fff;
+    position: absolute;
+      padding: inherit;
+      bottom: 40px;
+      display: flex;
+      font-weight: 600;
+      text-decoration: underline;
+      font-size: 14px;
+      text-align: center;
+      color: #fff;
   }
 }
 
