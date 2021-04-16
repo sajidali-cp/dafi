@@ -29,7 +29,7 @@ const CreateDAsset = ({
               <div className={styles.nameShortDiv}>
                 <div className={styles.name}>{balances[activeIndex]?.name}</div>
                 <div className={styles.short}>
-                  {balances[activeIndex]?.short}
+                  {balances[activeIndex]?.token}
                 </div>
               </div>
             </div>

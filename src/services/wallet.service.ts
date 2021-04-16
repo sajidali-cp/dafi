@@ -58,6 +58,7 @@ const getPriceObject = async (asset: IContractLookup,activeAddress:any): Promise
     let balance: Balance = {
         name: asset.fullName,
         short: asset.contractName,
+        token:"ERC20",
         rate: 0,
         change24h: 0,
         cryptoBalance: 0,
@@ -71,9 +72,9 @@ const getPriceObject = async (asset: IContractLookup,activeAddress:any): Promise
       );
       let bal;
       bal = await getERC20Balance(contractInfo, activeAddress);
-    //   if(asset.contractName === "ETH"){
-    //     bal = await getETHBalance(activeAddress);
-    //   }
+      if(asset.contractName === "ETH"){
+        balance.token="ETH"
+      }
     //   else{
     //     bal = await getERC20Balance(contractInfo, activeAddress);
     //   }
@@ -325,7 +326,7 @@ export const totalSupply = async (short: string): Promise<object> => {
         case "LINK":
            asset="dLINK";
             break; 
-        case "SNX":
+        case "AAVE":
            asset="dAAVE";
             break; 
                 

@@ -43,10 +43,10 @@ const Dashboard = () => {
               </div>
               <div className={styles.flexRow}>
                 <img src="/assets/Icons/Group 5874.svg"></img>
-                <div className={styles.amount}>{toFixedNoRounding(selected.DAFIBalance, 2)}</div>
+                <div className={styles.amount}>{toFixedNoRounding(selected.DAFIBalance, 4)}</div>
               </div>
             </div>
-            <DashboardWAsset selected={selected} />
+            <DashboardWAsset selected={selected} balances={balances}/>
             <div className={styles.createAsset}>
               <div className={styles.heading}>Create a dToken</div>
               <div className={styles.inputDiv}>

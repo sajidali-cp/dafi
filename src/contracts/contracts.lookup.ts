@@ -160,7 +160,7 @@ export const ContractLookup:IContractLookup[] = [
         contractAddress: "0x5C18680556781B885814B87887580e385ac6f3Be",
         marketRateApiID: "",
         oracleRateID: "",
-        fullName: "wBitcoin",
+        fullName: "wBTC",
         decimal:18,
         bytesCode:"0x64425443",
         contractAbi: ChainLinkAbi,

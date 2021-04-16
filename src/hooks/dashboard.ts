@@ -32,6 +32,7 @@ const useDashboard = () => {
     usdValue: 0,
   });
   const setUpcomponent = async (index: any) => {
+    debugger
     let res = await asyncGetTokenSupplyHistory(
       balances.length > 0 ? balances[index].short : "wBTC"
     );

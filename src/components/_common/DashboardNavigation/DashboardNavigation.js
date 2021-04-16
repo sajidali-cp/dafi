@@ -53,7 +53,7 @@ const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
   const assetData = [
     {
       icon: "assets/images/currency1.svg",
-      name: "wBitcoin",
+      name: "wBTC",
       short: "wBTC",
       token:"ERC20"
     },

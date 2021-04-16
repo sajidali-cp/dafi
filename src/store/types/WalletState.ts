@@ -18,6 +18,7 @@ export interface ChartData {
 export interface Balance {
     name: string;
     short: string;
+    token:string;
     rate: number;
     change24h: number;
     amount:number,
