@@ -34,7 +34,7 @@ return(
               <img src="/assets/images/currency2.svg" alt="img"/>
               <pre className={`${styles.wAssetsBalance} ${styles.positiveColor}`}>
                   <NumberFormat
-                    value={toFixedNoRounding(selected.dBTCBalance, 2)}
+                    value={toFixedNoRounding(selected.dETHBalance, 2)}
                     displayType={"text"}
                     thousandSeparator={true}
                   /> 
@@ -47,7 +47,7 @@ return(
               <img src="/assets/images/currency3.svg" alt="img"/>
               <pre className={`${styles.wAssetsBalance} ${styles.positiveColor}`}>
                   <NumberFormat
-                    value={toFixedNoRounding(selected.dBTCBalance, 2)}
+                    value={toFixedNoRounding(selected.dAAVEBalance, 2)}
                     displayType={"text"}
                     thousandSeparator={true}
                   /> 
@@ -59,7 +59,7 @@ return(
               <img src="/assets/images/currency4.svg" alt="img"/>
               <pre className={`${styles.wAssetsBalance} ${styles.positiveColor}`}>
                   <NumberFormat
-                    value={toFixedNoRounding(selected.dBTCBalance, 2)}
+                    value={toFixedNoRounding(selected.dLINKBalance, 2)}
                     displayType={"text"}
                     thousandSeparator={true}
                   /> 

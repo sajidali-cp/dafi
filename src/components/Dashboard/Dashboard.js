@@ -43,7 +43,7 @@ const Dashboard = () => {
               </div>
               <div className={styles.flexRow}>
                 <img src="/assets/Icons/Group 5874.svg"></img>
-                <div className={styles.amount}>0.00</div>
+                <div className={styles.amount}>{toFixedNoRounding(selected.DAFIBalance, 2)}</div>
               </div>
             </div>
             <DashboardWAsset selected={selected} />

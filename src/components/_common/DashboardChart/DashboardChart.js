@@ -38,7 +38,7 @@ export default class DashboardChart extends PureComponent {
           <div className={styles.totalWorth}>
           <NumberFormat value={toFixedNoRounding(this.props.chartData.dAsset || 0,2)} displayType={'text'} thousandSeparator={true} prefix={'$'} />
             </div>
-          <div className={styles.totalAssets}>dAsset Value</div>
+          <div className={styles.totalAssets}>Asset Value</div>
         </div>
       </div>
     );
