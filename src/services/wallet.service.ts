@@ -70,12 +70,13 @@ const getPriceObject = async (asset: IContractLookup,activeAddress:any): Promise
         ( contract) => contract.contractName === asset.contractName
       );
       let bal;
-      if(asset.contractName === "ETH"){
-        bal = await getETHBalance(activeAddress);
-      }
-      else{
-        bal = await getERC20Balance(contractInfo, activeAddress);
-      }
+      bal = await getERC20Balance(contractInfo, activeAddress);
+    //   if(asset.contractName === "ETH"){
+    //     bal = await getETHBalance(activeAddress);
+    //   }
+    //   else{
+    //     bal = await getERC20Balance(contractInfo, activeAddress);
+    //   }
       
 const obj:any=await dTokenDetails(asset.bytesCode);
 let currentPrice=Web3.utils.fromWei(obj._currentPrice, 'ether');
@@ -158,7 +159,7 @@ export const getERC20Balance = async (contractInfo: any, address: string): Promi
 export const getDAFI20Balance = async (contractInfo: any, address: string): Promise<number> => {
     web3 = store.getState().wallet.web3;
     const chartsAssets:any={
-        DFYToken: 0,
+        DAFIToken: 0,
         USDValOfdBTC: 0,
         USDValOfdETH: 0,
         USDValOfdLINK: 0,
@@ -169,10 +170,11 @@ export const getDAFI20Balance = async (contractInfo: any, address: string): Prom
         if (contractInfo) {
             const contract = new web3.eth.Contract(contractInfo.contractAbi, contractInfo.contractAddress, {});
             try {
-                
+                debugger
                 const obj = await contract.methods.getDAFIToken(address).call();
+                debugger
                 if(obj){
-                    chartsAssets.DFYToken=  ConvertFromE(web3.utils.fromWei(obj.DFYToken, 'ether'));
+                    chartsAssets.DFYToken=  ConvertFromE(web3.utils.fromWei(obj.DAFIToken, 'ether'));
                     chartsAssets.USDValOfdBTC=  ConvertFromE(web3.utils.fromWei(obj.USDValOfdBTC, 'ether'));
                     chartsAssets.USDValOfdETH=  ConvertFromE(web3.utils.fromWei(obj.USDValOfdETH, 'ether'));
                     chartsAssets.USDValOfdLINK=  ConvertFromE(web3.utils.fromWei(obj.USDValOfdLINK, 'ether'));

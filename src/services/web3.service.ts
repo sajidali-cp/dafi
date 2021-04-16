@@ -87,6 +87,7 @@ export const updateDAssets = async () => {
     let dAAVEBalance: any = await getERC20Balance(dAAVE, accounts[i]);
     
     let DAFIObj: any = await getDAFI20Balance(DAFI, accounts[i]);
+    debugger
     let ETHBalance = await getETHBalance(accounts[i]);
     let walletObj: Wallet = {
       address: accounts[i],
