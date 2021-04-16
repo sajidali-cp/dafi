@@ -9,7 +9,7 @@ export enum ERC20Contracts {
   wBTC = "wBTC",
   ETH = "ETH",
   ChainLINK = "LINK",
-  dSNX = "dSNX",
-  SNX = "SNX",
+  dAAVE="dAAVE",
+  AAVE="AAVE",
   DAFIPLATFORM = "DAFIPLATFORM",
 }

@@ -77,14 +77,14 @@ export const updateDAssets = async () => {
   const DAFI = ContractLookup.find(
     (contract) => contract.contractName === ERC20Contracts.DAFIPLATFORM
   );
-  const dSNX = ContractLookup.find(
-    (contract) => contract.contractName === ERC20Contracts.dSNX
+  const dAAVE = ContractLookup.find(
+    (contract) => contract.contractName === ERC20Contracts.dAAVE
   );
   for (let i = 0; i < accounts.length; i++) {
     let dLINKBalance: any = await getERC20Balance(dLINK, accounts[i]); 
     let dBTCBalance: any = await getERC20Balance(dBTC, accounts[i]);
     let dETHBalance: any = await getERC20Balance(dETH, accounts[i]);
-    let dSNXBalance: any = await getERC20Balance(dSNX, accounts[i]);
+    let dAAVEBalance: any = await getERC20Balance(dAAVE, accounts[i]);
     
     let DAFIObj: any = await getDAFI20Balance(DAFI, accounts[i]);
     let ETHBalance = await getETHBalance(accounts[i]);
@@ -93,7 +93,7 @@ export const updateDAssets = async () => {
       dLINKBalance: dLINKBalance ? Number(dLINKBalance) : 0,
       dBTCBalance: dBTCBalance ? Number(dBTCBalance) : 0,
       dETHBalance: dETHBalance ? Number(dETHBalance) : 0,
-      dSNXBalance: dSNXBalance ? Number(dSNXBalance) : 0,
+      dAAVEBalance: dAAVEBalance ? Number(dAAVEBalance) : 0,
       DAFIBalance: DAFIObj ? Number(DAFIObj.DFYToken) : 0,
       ETHBalance: ETHBalance ? ETHBalance : 0,
       isConnected : true,
@@ -103,13 +103,13 @@ export const updateDAssets = async () => {
       { name: "dBTC", value: Number(DAFIObj.USDValOfdBTC), fill: "#f8c624" },
       { name: "dETH", value: Number(DAFIObj.USDValOfdETH), fill: "#6b74b5" },
       { name: "dLINK", value: Number(DAFIObj.USDValOfdLINK), fill: "#57e3fd" },
-      { name: "dSNX", value: Number(DAFIObj.USDValOfdSNX), fill: "#bf2071" },
+      { name: "dAAVE", value: Number(DAFIObj.USDValOfdAAVE), fill: "#bf2071" },
     ];
     let finalChartData =
       Number(DAFIObj.USDValOfdBTC) > 0 ||
       Number(DAFIObj.USDValOfdETH) > 0 ||
       Number(DAFIObj.USDValOfdLINK) > 0 ||
-      Number(DAFIObj.USDValOfdSNX) > 0
+      Number(DAFIObj.USDValOfdAAVE) > 0
         ? chartsAssets
         : [];
     data = {

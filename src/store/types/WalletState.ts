@@ -7,7 +7,7 @@ export interface Wallet {
     ETHBalance:number,
     dBTCBalance:number,
     dETHBalance:number,
-    dSNXBalance:number,
+    dAAVEBalance:number,
     DAFIBalance:number,
     isConnected:boolean,
 }

@@ -66,7 +66,7 @@ const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
     {
       icon: "assets/images/currency3.svg",
       name: "AAVE",
-      short: "SNX",
+      short: "AAVE",
       token:"ERC20"
     },
     {

@@ -61,13 +61,13 @@ const Dashboard = () => {
                   <div className={styles.errorMessage}>{errorMessage}</div>
                 ) : null}
               </div>
-              <div className={styles.create} onClick={handleCreate}>
+              <button className={styles.create} disabled={isConnected ? false:true} onClick={handleCreate}>
                 {isCreating ? (
                   <Loader type="Bars" color="#ffffff" height={18} width={20} />
                 ) : (
                   "Create"
                 )}
-              </div>
+              </button>
             </div>
           </div>
           <CreateDAsset

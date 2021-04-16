@@ -28,7 +28,7 @@ const initialState: WalletState = {
     ETHBalance: 0,
     dBTCBalance: 0,
     dETHBalance: 0,
-    dSNXBalance:0,
+    dAAVEBalance:0,
     DAFIBalance: 0,
     address: "",
     isConnected:false,

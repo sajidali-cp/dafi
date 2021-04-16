@@ -57,6 +57,7 @@ const useDashboard = () => {
   };
   const handleAssetSellection = async (short: any) => {
     let index = balances.map((obj: any) => obj.short).indexOf(short);
+    
     if (balances.length > 0 && index >= 0) {
       setActiveShort(short);
       setActiveIndex(index);
@@ -103,7 +104,7 @@ const useDashboard = () => {
       _type = "dLINK";
     }
     if (balances[activeIndex].short === "SNX") {
-      _type = "dSNX";
+      _type = "dAAVE";
     }
     try {
       if (!isValidated()) {

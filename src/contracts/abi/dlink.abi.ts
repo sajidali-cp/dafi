@@ -38,6 +38,25 @@ export const dLINKAbi: AbiItem | AbiItem[] = [
       {
         indexed: true,
         internalType: "address",
+        name: "oldAddress",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "newAddress",
+        type: "address",
+      },
+    ],
+    name: "DAFIContractChange",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
         name: "previousOwner",
         type: "address",
       },
@@ -73,8 +92,18 @@ export const dLINKAbi: AbiItem | AbiItem[] = [
   {
     anonymous: false,
     inputs: [
-      { indexed: true, internalType: "address", name: "from", type: "address" },
-      { indexed: true, internalType: "address", name: "to", type: "address" },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "from",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "to",
+        type: "address",
+      },
       {
         indexed: false,
         internalType: "uint256",
@@ -87,12 +116,56 @@ export const dLINKAbi: AbiItem | AbiItem[] = [
   },
   {
     constant: true,
+    inputs: [],
+    name: "DAFIContract",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "_totalSupply",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: true,
     inputs: [
-      { internalType: "address", name: "_owner", type: "address" },
-      { internalType: "address", name: "_spender", type: "address" },
+      {
+        internalType: "address",
+        name: "_owner",
+        type: "address",
+      },
+      {
+        internalType: "address",
+        name: "_spender",
+        type: "address",
+      },
     ],
     name: "allowance",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
     payable: false,
     stateMutability: "view",
     type: "function",
@@ -100,11 +173,25 @@ export const dLINKAbi: AbiItem | AbiItem[] = [
   {
     constant: false,
     inputs: [
-      { internalType: "address", name: "_spender", type: "address" },
-      { internalType: "uint256", name: "_value", type: "uint256" },
+      {
+        internalType: "address",
+        name: "_spender",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "_value",
+        type: "uint256",
+      },
     ],
     name: "approve",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
     payable: false,
     stateMutability: "nonpayable",
     type: "function",
@@ -112,19 +199,41 @@ export const dLINKAbi: AbiItem | AbiItem[] = [
   {
     constant: true,
     inputs: [
-      { internalType: "address", name: "_beneficiary", type: "address" },
+      {
+        internalType: "address",
+        name: "_beneficiary",
+        type: "address",
+      },
     ],
     name: "balanceCheck",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
     payable: false,
     stateMutability: "view",
     type: "function",
   },
   {
     constant: true,
-    inputs: [{ internalType: "address", name: "_owner", type: "address" }],
+    inputs: [
+      {
+        internalType: "address",
+        name: "_owner",
+        type: "address",
+      },
+    ],
     name: "balanceOf",
-    outputs: [{ internalType: "uint256", name: "balance", type: "uint256" }],
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "balance",
+        type: "uint256",
+      },
+    ],
     payable: false,
     stateMutability: "view",
     type: "function",
@@ -132,8 +241,16 @@ export const dLINKAbi: AbiItem | AbiItem[] = [
   {
     constant: false,
     inputs: [
-      { internalType: "uint256", name: "_value", type: "uint256" },
-      { internalType: "address", name: "_beneficiary", type: "address" },
+      {
+        internalType: "uint256",
+        name: "_value",
+        type: "uint256",
+      },
+      {
+        internalType: "address",
+        name: "_beneficiary",
+        type: "address",
+      },
     ],
     name: "burn",
     outputs: [],
@@ -145,7 +262,13 @@ export const dLINKAbi: AbiItem | AbiItem[] = [
     constant: true,
     inputs: [],
     name: "decimals",
-    outputs: [{ internalType: "uint8", name: "", type: "uint8" }],
+    outputs: [
+      {
+        internalType: "uint8",
+        name: "",
+        type: "uint8",
+      },
+    ],
     payable: false,
     stateMutability: "view",
     type: "function",
@@ -153,13 +276,42 @@ export const dLINKAbi: AbiItem | AbiItem[] = [
   {
     constant: false,
     inputs: [
-      { internalType: "address", name: "_spender", type: "address" },
-      { internalType: "uint256", name: "_subtractedValue", type: "uint256" },
+      {
+        internalType: "address",
+        name: "_spender",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "_subtractedValue",
+        type: "uint256",
+      },
     ],
     name: "decreaseApproval",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
     payable: false,
     stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "demandFactor",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
     type: "function",
   },
   {
@@ -183,11 +335,25 @@ export const dLINKAbi: AbiItem | AbiItem[] = [
   {
     constant: false,
     inputs: [
-      { internalType: "address", name: "_spender", type: "address" },
-      { internalType: "uint256", name: "_addedValue", type: "uint256" },
+      {
+        internalType: "address",
+        name: "_spender",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "_addedValue",
+        type: "uint256",
+      },
     ],
     name: "increaseApproval",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
     payable: false,
     stateMutability: "nonpayable",
     type: "function",
@@ -195,8 +361,16 @@ export const dLINKAbi: AbiItem | AbiItem[] = [
   {
     constant: false,
     inputs: [
-      { internalType: "uint256", name: "_value", type: "uint256" },
-      { internalType: "address", name: "_beneficiary", type: "address" },
+      {
+        internalType: "uint256",
+        name: "_value",
+        type: "uint256",
+      },
+      {
+        internalType: "address",
+        name: "_beneficiary",
+        type: "address",
+      },
     ],
     name: "mint",
     outputs: [],
@@ -208,7 +382,13 @@ export const dLINKAbi: AbiItem | AbiItem[] = [
     constant: true,
     inputs: [],
     name: "name",
-    outputs: [{ internalType: "string", name: "", type: "string" }],
+    outputs: [
+      {
+        internalType: "string",
+        name: "",
+        type: "string",
+      },
+    ],
     payable: false,
     stateMutability: "view",
     type: "function",
@@ -217,7 +397,13 @@ export const dLINKAbi: AbiItem | AbiItem[] = [
     constant: true,
     inputs: [],
     name: "owner",
-    outputs: [{ internalType: "address", name: "", type: "address" }],
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
     payable: false,
     stateMutability: "view",
     type: "function",
@@ -225,7 +411,11 @@ export const dLINKAbi: AbiItem | AbiItem[] = [
   {
     constant: false,
     inputs: [
-      { internalType: "uint256", name: "_demandFactor", type: "uint256" },
+      {
+        internalType: "uint256",
+        name: "_demandFactor",
+        type: "uint256",
+      },
     ],
     name: "rebase",
     outputs: [],
@@ -235,7 +425,13 @@ export const dLINKAbi: AbiItem | AbiItem[] = [
   },
   {
     constant: false,
-    inputs: [{ internalType: "address", name: "_address", type: "address" }],
+    inputs: [
+      {
+        internalType: "address",
+        name: "_address",
+        type: "address",
+      },
+    ],
     name: "setDAFIContract",
     outputs: [],
     payable: false,
@@ -246,7 +442,13 @@ export const dLINKAbi: AbiItem | AbiItem[] = [
     constant: true,
     inputs: [],
     name: "symbol",
-    outputs: [{ internalType: "string", name: "", type: "string" }],
+    outputs: [
+      {
+        internalType: "string",
+        name: "",
+        type: "string",
+      },
+    ],
     payable: false,
     stateMutability: "view",
     type: "function",
@@ -255,7 +457,13 @@ export const dLINKAbi: AbiItem | AbiItem[] = [
     constant: true,
     inputs: [],
     name: "totalSupply",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
     payable: false,
     stateMutability: "view",
     type: "function",
@@ -263,11 +471,71 @@ export const dLINKAbi: AbiItem | AbiItem[] = [
   {
     constant: false,
     inputs: [
-      { internalType: "address", name: "_to", type: "address" },
-      { internalType: "uint256", name: "_value", type: "uint256" },
+      {
+        internalType: "address",
+        name: "_to",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "_value",
+        type: "uint256",
+      },
     ],
     name: "transfer",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "transferAllowance",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        internalType: "address",
+        name: "_from",
+        type: "address",
+      },
+      {
+        internalType: "address",
+        name: "_to",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "_value",
+        type: "uint256",
+      },
+    ],
+    name: "transferFrom",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
     payable: false,
     stateMutability: "nonpayable",
     type: "function",
@@ -275,19 +543,12 @@ export const dLINKAbi: AbiItem | AbiItem[] = [
   {
     constant: false,
     inputs: [
-      { internalType: "address", name: "_from", type: "address" },
-      { internalType: "address", name: "_to", type: "address" },
-      { internalType: "uint256", name: "_value", type: "uint256" },
+      {
+        internalType: "address",
+        name: "newOwner",
+        type: "address",
+      },
     ],
-    name: "transferFrom",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [{ internalType: "address", name: "newOwner", type: "address" }],
     name: "transferOwnership",
     outputs: [],
     payable: false,

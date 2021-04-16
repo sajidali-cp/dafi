@@ -1,6 +1,6 @@
 import { AbiItem } from "web3-utils";
 
-export const dETHAbi: AbiItem | AbiItem[] = [
+export const dAAVEAbi: AbiItem | AbiItem[] = [
   {
     inputs: [],
     payable: false,

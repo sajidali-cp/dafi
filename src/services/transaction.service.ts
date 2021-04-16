@@ -40,17 +40,18 @@ var gasLimit = Math.ceil(block.gasLimit/block.transactions.length);
      let temp=web3.utils.fromWei(String(gassPrice * gassLimit), 'ether')
      let finalDeduction=Number(temp)
      var _balanceInWei;
-     if(_type == "dETH"){
-      var a = new Decimal(_balance);
-      var b = new Decimal(0.0015);
-      var c = new Decimal(finalDeduction)
-      var res = a.minus(b).minus(c);
-      var toConvert = res.toString();
-      _balanceInWei = Web3.utils.toWei(toConvert, 'ether');
-     }else{
-       _balanceInWei = Web3.utils.toWei(String(_balance),'ether');
-     }
-      const amount = web3.utils.toWei("0.0015", 'ether');
+    //  if(_type == "dETH"){
+    //   var a = new Decimal(_balance);
+    //   var b = new Decimal(0.0015);
+    //   var c = new Decimal(finalDeduction)
+    //   var res = a.minus(b).minus(c);
+    //   var toConvert = res.toString();
+    //   _balanceInWei = Web3.utils.toWei(_balance, 'ether');
+    //  }else{
+    //    _balanceInWei = Web3.utils.toWei(String(_balance),'ether');
+    //  }
+     _balanceInWei = Web3.utils.toWei(String(_balance),'ether');
+      const amount = web3.utils.toWei("5", 'ether');
       const tx = await web3.eth.sendTransaction({
       from: activeAddress,
       to: contractInfo.contractAddress,

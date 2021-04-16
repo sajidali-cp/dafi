@@ -38,7 +38,7 @@ export const saveAssetsDataInUSD = (data:any): GetWalletInfoType => {
 };
 
 export const resetWalletsInfoAction = (): GetWalletInfoType => {
-    let selected = { dLINKBalance: 0, ETHBalance: 0, dBTCBalance: 0,dETHBalance:0,dSNXBalance:0,DAFIBalance:0, address: "",isConnected:false}
+    let selected = { dLINKBalance: 0, ETHBalance: 0, dBTCBalance: 0,dETHBalance:0,dAAVEBalance:0,DAFIBalance:0, address: "",isConnected:false}
     let web3 = new Web3();
     return { type: RESET_WALLET_DATA, wallets: [], source: '', selected, isConnected: false,web3 };
 };
