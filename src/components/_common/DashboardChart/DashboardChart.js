@@ -17,7 +17,7 @@ export default class DashboardChart extends PureComponent {
                 innerRadius={85}
                 outerRadius={100}
                 stroke="transparent"
-                paddingAngle={5}
+                paddingAngle={0}
                 dataKey="value"
                 fill="#fff"
               />
