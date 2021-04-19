@@ -39,6 +39,7 @@ const CreateDAsset = ({
               >
                 <div className={styles.key}>PRICE</div>
                 <div className={`${styles.value} ${styles.priceTextColor}`}>
+                  $
                   <NumberFormat
                     value={toFixedNoRounding(balances[activeIndex]?.rate, 2)}
                     displayType={"text"}
@@ -55,7 +56,7 @@ const CreateDAsset = ({
                       : styles.dangerTextColor
                   }`}
                 >
-                  {toFixedNoRounding(balances[activeIndex]?.change24h, 2)}
+                  {toFixedNoRounding(balances[activeIndex]?.change24h, 2)}%
                 </div>
               </div>
               <div className={`${styles.keyValueRow} ${styles.bottomBorder}`}>
@@ -74,7 +75,7 @@ const CreateDAsset = ({
               <div className={`${styles.keyValueRow} ${styles.bottomBorder}`}>
                 <div className={styles.key}>VALUE</div>
                 <div className={`${styles.value} ${styles.valueTextColor}`}>
-                  <NumberFormat
+                  $<NumberFormat
                     value={toFixedNoRounding(balances[activeIndex]?.amount, 2)}
                     displayType={"text"}
                     thousandSeparator={true}

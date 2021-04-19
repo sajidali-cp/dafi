@@ -52,7 +52,7 @@ const DashboardWAsset = ({ selected, balances }: any) => {
               : styles.negative
           }`}
         >
-          {balances.filter((x: any) => x.short === "wBTC")[0]?.change24h || 0} %
+          {toFixedNoRounding(balances.filter((x: any) => x.short === "wBTC")[0]?.change24h || 0,2)} %
         </div>
       </div>
       <div className={`${styles.wAssetsDiv} ${styles.leftRightBorder}`}>
@@ -78,7 +78,7 @@ const DashboardWAsset = ({ selected, balances }: any) => {
               : styles.negative
           }`}
         >
-          {balances.filter((x: any) => x.short === "ETH")[0]?.change24h || 0} %
+          {toFixedNoRounding(balances.filter((x: any) => x.short === "ETH")[0]?.change24h || 0,2)} %
         </div>
       </div>
 
@@ -105,7 +105,7 @@ const DashboardWAsset = ({ selected, balances }: any) => {
               : styles.negative
           }`}
         >
-          {balances.filter((x: any) => x.short === "AAVE")[0]?.change24h || 0} %
+          {toFixedNoRounding(balances.filter((x: any) => x.short === "AAVE")[0]?.change24h || 0,2)} %
         </div>
       </div>
       <div className={styles.wAssetsDiv}>
@@ -131,7 +131,7 @@ const DashboardWAsset = ({ selected, balances }: any) => {
               : styles.negative
           }`}
         >
-          {balances.filter((x: any) => x.short === "LINK")[0]?.change24h || 0} %
+          {toFixedNoRounding(balances.filter((x: any) => x.short === "LINK")[0]?.change24h || 0,2)} %
         </div>
       </div>
     </div>

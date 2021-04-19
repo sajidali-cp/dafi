@@ -104,7 +104,7 @@ const useDashboard = () => {
     if (balances[activeIndex].short === "LINK") {
       _type = "dLINK";
     }
-    if (balances[activeIndex].short === "SNX") {
+    if (balances[activeIndex].short === "AAVE") {
       _type = "dAAVE";
     }
     try {
