@@ -3,6 +3,8 @@ import Loader from "react-loader-spinner";
 import NumberFormat from "react-number-format";
 import { toFixedNoRounding } from "../_common/FixedNoRounding";
 import styles from "./Dashboard.module.scss";
+import { dark, light } from "../../theme/theme";
+import { useSelector } from "react-redux";
 
 const CreateDAsset = ({
   balances,
@@ -17,8 +19,15 @@ const CreateDAsset = ({
   isCreating,
   activeIndex,
 }: any) => {
+  //@ts-ignore
+  const isDarkTheme = useSelector((state) => state.wallet.isDarkTheme);
   return (
-    <div className={styles.rightSection}>
+    <div
+      className={styles.rightSection}
+      style={{
+        backgroundColor: isDarkTheme ? dark.colorThree : light.colorThree,
+      }}
+    >
       {balances.length > 0 && isConnected ? (
         <>
           <div className={styles.assetData}>
@@ -27,7 +36,14 @@ const CreateDAsset = ({
                 <img src={balances[activeIndex]?.icon} alt="asset" />
               </div>
               <div className={styles.nameShortDiv}>
-                <div className={styles.name}>{balances[activeIndex]?.name}</div>
+                <div
+                  className={styles.name}
+                  style={{
+                    color: isDarkTheme ? dark.colorSix : light.colorSix,
+                  }}
+                >
+                  {balances[activeIndex]?.name}
+                </div>
                 <div className={styles.short}>
                   {balances[activeIndex]?.token}
                 </div>
@@ -37,8 +53,20 @@ const CreateDAsset = ({
               <div
                 className={`${styles.keyValueRow} ${styles.topBorder} ${styles.bottomBorder}`}
               >
-                <div className={styles.key}>PRICE</div>
-                <div className={`${styles.value} ${styles.priceTextColor}`}>
+                <div
+                  className={styles.key}
+                  style={{
+                    color: isDarkTheme ? dark.colorSix : light.colorSix,
+                  }}
+                >
+                  PRICE
+                </div>
+                <div
+                  className={`${styles.value} ${styles.priceTextColor}`}
+                  style={{
+                    color: isDarkTheme ? dark.colorSix : light.colorSix,
+                  }}
+                >
                   $
                   <NumberFormat
                     value={toFixedNoRounding(balances[activeIndex]?.rate, 2)}
@@ -48,7 +76,14 @@ const CreateDAsset = ({
                 </div>
               </div>
               <div className={`${styles.keyValueRow} ${styles.bottomBorder}`}>
-                <div className={styles.key}>24H CHANGE</div>
+                <div
+                  className={styles.key}
+                  style={{
+                    color: isDarkTheme ? dark.colorSix : light.colorSix,
+                  }}
+                >
+                  24H CHANGE
+                </div>
                 <div
                   className={`${styles.value} ${
                     balances[activeIndex]?.change24h >= 0
@@ -60,7 +95,14 @@ const CreateDAsset = ({
                 </div>
               </div>
               <div className={`${styles.keyValueRow} ${styles.bottomBorder}`}>
-                <div className={styles.key}>BALANCE</div>
+                <div
+                  className={styles.key}
+                  style={{
+                    color: isDarkTheme ? dark.colorSix : light.colorSix,
+                  }}
+                >
+                  BALANCE
+                </div>
                 <div className={`${styles.value} ${styles.balanceTextColor}`}>
                   <NumberFormat
                     value={toFixedNoRounding(
@@ -73,9 +115,22 @@ const CreateDAsset = ({
                 </div>
               </div>
               <div className={`${styles.keyValueRow} ${styles.bottomBorder}`}>
-                <div className={styles.key}>VALUE</div>
-                <div className={`${styles.value} ${styles.valueTextColor}`}>
-                  $<NumberFormat
+                <div
+                  className={styles.key}
+                  style={{
+                    color: isDarkTheme ? dark.colorSix : light.colorSix,
+                  }}
+                >
+                  VALUE
+                </div>
+                <div
+                  className={`${styles.value} ${styles.valueTextColor}`}
+                  style={{
+                    color: isDarkTheme ? dark.colorSix : light.colorSix,
+                  }}
+                >
+                  $
+                  <NumberFormat
                     value={toFixedNoRounding(balances[activeIndex]?.amount, 2)}
                     displayType={"text"}
                     thousandSeparator={true}
@@ -86,7 +141,12 @@ const CreateDAsset = ({
           </div>
         </>
       ) : (
-        <div className={styles.connectYourWallet}>
+        <div
+          className={styles.connectYourWallet}
+          style={{
+            color: isDarkTheme ? dark.colorSix : light.colorSix,
+          }}
+        >
           Please connect your wallet...
         </div>
       )}

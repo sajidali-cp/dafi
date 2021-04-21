@@ -12,6 +12,7 @@ import {
   SAVE_C_RATIO,
   SAVE_TARGET_C_RATIO,
   SAVE_ASSETS_DATA,
+  TOGGLE_THEME,
 } from "../actions/WalletActionTypes";
 import { WalletState, Wallet } from "../types/WalletState";
 
@@ -28,11 +29,12 @@ const initialState: WalletState = {
     ETHBalance: 0,
     dBTCBalance: 0,
     dETHBalance: 0,
-    dAAVEBalance:0,
+    dAAVEBalance: 0,
     DAFIBalance: 0,
     address: "",
-    isConnected:false,
+    isConnected: false,
   },
+  isDarkTheme: false,
   wallets: [],
   balances: [],
   isConnected: false,
@@ -107,6 +109,12 @@ export function walletReducer(
         isConnected: action.isConnected,
         wallets: action.wallets,
         selected: action.selected,
+      };
+
+    case TOGGLE_THEME:
+      return {
+        ...state,
+        isDarkTheme: action.payload,
       };
 
     default:

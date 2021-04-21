@@ -11,6 +11,7 @@ export const UPDATE_STACK_BALANCE = "UPDATE_STACK_BALANCE";
 export const SAVE_C_RATIO = "SAVE_C_RATIO";
 export const SAVE_ASSETS_DATA = "SAVE_ASSETS_DATA";
 export const SAVE_TARGET_C_RATIO = "SAVE_TARGET_C_RATIO";
+export const TOGGLE_THEME = "TOGGLE_THEME";
 
 interface saveCRatio {
   type: typeof SAVE_C_RATIO;
@@ -60,6 +61,11 @@ interface SaveBalanceData {
   balances: Balance[];
 }
 
+interface toggleTheme {
+  type: typeof TOGGLE_THEME;
+  payload: any;
+}
+
 export type GetWalletInfoType =
   | SaveWalletData
   | LoadingBalancePending
@@ -70,4 +76,5 @@ export type GetWalletInfoType =
   | updateStackBalances
   | saveCRatio
   | saveAssetData
+  | toggleTheme
   | saveTagetCRatio;

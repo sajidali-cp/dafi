@@ -2,8 +2,9 @@ import React, { PureComponent } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import { toFixedNoRounding } from "../FixedNoRounding";
 import styles from "./DashboardChart.module.scss";
-import NumberFormat from 'react-number-format';
-const noData = [{ name: "Group A", value: 400,fill:"#23fccf" }];
+import NumberFormat from "react-number-format";
+import { dark, light } from "../../../theme/theme";
+const noData = [{ name: "Group A", value: 400, fill: "#23fccf" }];
 
 export default class DashboardChart extends PureComponent {
   render() {
@@ -35,10 +36,27 @@ export default class DashboardChart extends PureComponent {
           </PieChart>
         </ResponsiveContainer>
         <div className={styles.portfolioInfo}>
-          <div className={styles.totalWorth}>
-          <NumberFormat value={toFixedNoRounding(this.props.chartData.dAsset || 0,2)} displayType={'text'} thousandSeparator={true} prefix={'$'} />
-            </div>
-          <div className={styles.totalAssets}>dAsset Value</div>
+          <div
+            className={styles.totalWorth}
+            style={{
+              color: this.props.isDarkTheme ? dark.colorSix : light.colorSix,
+            }}
+          >
+            <NumberFormat
+              value={toFixedNoRounding(this.props.chartData.dAsset || 0, 2)}
+              displayType={"text"}
+              thousandSeparator={true}
+              prefix={"$"}
+            />
+          </div>
+          <div
+            className={styles.totalAssets}
+            style={{
+              color: this.props.isDarkTheme ? dark.colorSix : light.colorSix,
+            }}
+          >
+            dAsset Value
+          </div>
         </div>
       </div>
     );
