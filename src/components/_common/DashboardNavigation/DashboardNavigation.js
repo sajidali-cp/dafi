@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styles from "./DashboardNavigation.module.scss";
 import logo from "../../../assets/images/dashboard-nav-logo.svg";
+import lightActive from "../../../assets/images/light-active.svg";
+import lightInactive from "../../../assets/images/light-inactive.svg";
+import darkActive from "../../../assets/images/dark-active.svg";
+import darkInactive from "../../../assets/images/dark-inactive.svg";
 import wallet from "../../../assets/images/wallet-icon.svg";
 import menu from "../../../assets/images/burger-menu.svg";
 import metamask from "../../../assets/images/Metamask.svg";
@@ -11,10 +15,14 @@ import "../../../styles/burgerMenu.scss";
 import { web3Sources } from "../../../constants";
 import { initializeWeb3 } from "../../../services/web3.service";
 import { useAlert } from "react-alert";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useLocation, Link } from "react-router-dom";
+import { light, dark } from "../../../theme/theme";
+import { toggleTheme } from "../../../store/actions/WalletActions";
 
 const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
+  const isDarkTheme = useSelector((state) => state.wallet.isDarkTheme);
+  const dispatch = useDispatch();
   const location = useLocation();
   const alert = useAlert();
   const {
@@ -55,25 +63,25 @@ const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
       icon: "assets/images/currency1.svg",
       name: "wBTC",
       short: "wBTC",
-      token:"ERC20"
+      token: "ERC20",
     },
     {
       icon: "assets/images/currency2.svg",
       name: "Ethereum",
       short: "ETH",
-      token:"ETH"
+      token: "ETH",
     },
     {
       icon: "assets/images/currency3.svg",
       name: "AAVE",
       short: "AAVE",
-      token:"ERC20"
+      token: "ERC20",
     },
     {
       icon: "assets/images/currency4.svg",
       name: "Chainlink",
       short: "LINK",
-      token:"ERC20"
+      token: "ERC20",
     },
   ];
 
@@ -122,12 +130,24 @@ const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
               </div>
             ))}
 
-            <div className="learnText" onClick={()=>{setMenuOpenState(false)}} > 
-            <a target="_blank" href="https://www.dafiprotocol.io/whitepaper">Learn about the Dafi Protocol</a>
+            <div
+              className="learnText"
+              onClick={() => {
+                setMenuOpenState(false);
+              }}
+            >
+              <a target="_blank" href="https://www.dafiprotocol.io/whitepaper">
+                Learn about DAFI
+              </a>
             </div>
           </div>
         </Menu>
-        <div className={styles.wrapper}>
+        <div
+          className={styles.wrapper}
+          style={{
+            backgroundColor: isDarkTheme ? dark.colorOne : light.colorOne,
+          }}
+        >
           <div className={styles.logo}>
             <Link to="/">
               <img src={logo} alt="logo" />
@@ -175,7 +195,27 @@ const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
             </div>
           </div>
           <div className={styles.weblearnText}>
-          <a target="_blank" href="https://www.dafiprotocol.io/whitepaper">Learn about the Dafi Protocol</a>
+            <a target="_blank" href="https://www.dafiprotocol.io/whitepaper">
+              Learn about DAFI
+            </a>
+            <div className={styles.toggleIcons}>
+              <div
+                className={styles.light}
+                onClick={() => dispatch(toggleTheme(false))}
+              >
+                <img
+                  src={isDarkTheme ? lightInactive : lightActive}
+                  alt="light"
+                />
+              </div>
+              <span>|</span>
+              <div
+                className={styles.dark}
+                onClick={() => dispatch(toggleTheme(true))}
+              >
+                <img src={isDarkTheme ? darkActive : darkInactive} alt="dark" />
+              </div>
+            </div>
           </div>
           {/* <div className={styles.actionsDiv}>
             <div className={styles.signUp}>Learn More</div>

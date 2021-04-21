@@ -2,8 +2,12 @@ import React from "react";
 import NumberFormat from "react-number-format";
 import { toFixedNoRounding } from "../_common/FixedNoRounding";
 import styles from "./Dashboard.module.scss";
+import { dark, light } from "../../theme/theme";
+import { useSelector } from "react-redux";
 
 const DashboardWAsset = ({ selected, balances }: any) => {
+  //@ts-ignore
+  const isDarkTheme = useSelector((state) => state.wallet.isDarkTheme);
   console.log(balances.filter((x: any) => x.name === "Ethereum"));
   console.log(balances);
   //   DAFIBalance: 50
@@ -29,7 +33,12 @@ const DashboardWAsset = ({ selected, balances }: any) => {
                 <div className={`${styles.percentage} ${styles.positive}`}>Total DAFI</div>
               </div> */}
 
-      <div className={`${styles.wAssetsDiv} ${styles.leftBorder}`}>
+      <div
+        className={`${styles.wAssetsDiv} ${styles.leftBorder}`}
+        style={{
+          backgroundColor: isDarkTheme ? dark.colorFive : light.colorFive,
+        }}
+      >
         <img src="/assets/images/currency1.svg" alt="img" />
         <pre className={`${styles.wAssetsBalance} ${styles.positiveColor}`}>
           <NumberFormat
@@ -52,10 +61,19 @@ const DashboardWAsset = ({ selected, balances }: any) => {
               : styles.negative
           }`}
         >
-          {toFixedNoRounding(balances.filter((x: any) => x.short === "wBTC")[0]?.change24h || 0,2)} %
+          {toFixedNoRounding(
+            balances.filter((x: any) => x.short === "wBTC")[0]?.change24h || 0,
+            2
+          )}{" "}
+          %
         </div>
       </div>
-      <div className={`${styles.wAssetsDiv} ${styles.leftRightBorder}`}>
+      <div
+        className={`${styles.wAssetsDiv} ${styles.leftRightBorder}`}
+        style={{
+          backgroundColor: isDarkTheme ? dark.colorFive : light.colorFive,
+        }}
+      >
         <img src="/assets/images/currency2.svg" alt="img" />
         <pre className={`${styles.wAssetsBalance} ${styles.positiveColor}`}>
           <NumberFormat
@@ -78,11 +96,20 @@ const DashboardWAsset = ({ selected, balances }: any) => {
               : styles.negative
           }`}
         >
-          {toFixedNoRounding(balances.filter((x: any) => x.short === "ETH")[0]?.change24h || 0,2)} %
+          {toFixedNoRounding(
+            balances.filter((x: any) => x.short === "ETH")[0]?.change24h || 0,
+            2
+          )}{" "}
+          %
         </div>
       </div>
 
-      <div className={`${styles.wAssetsDiv} ${styles.rightBorder}`}>
+      <div
+        className={`${styles.wAssetsDiv} ${styles.rightBorder}`}
+        style={{
+          backgroundColor: isDarkTheme ? dark.colorFive : light.colorFive,
+        }}
+      >
         <img src="/assets/images/currency3.svg" alt="img" />
         <pre className={`${styles.wAssetsBalance} ${styles.positiveColor}`}>
           <NumberFormat
@@ -105,10 +132,19 @@ const DashboardWAsset = ({ selected, balances }: any) => {
               : styles.negative
           }`}
         >
-          {toFixedNoRounding(balances.filter((x: any) => x.short === "AAVE")[0]?.change24h || 0,2)} %
+          {toFixedNoRounding(
+            balances.filter((x: any) => x.short === "AAVE")[0]?.change24h || 0,
+            2
+          )}{" "}
+          %
         </div>
       </div>
-      <div className={styles.wAssetsDiv}>
+      <div
+        className={styles.wAssetsDiv}
+        style={{
+          backgroundColor: isDarkTheme ? dark.colorFive : light.colorFive,
+        }}
+      >
         <img src="/assets/images/currency4.svg" alt="img" />
         <pre className={`${styles.wAssetsBalance} ${styles.positiveColor}`}>
           <NumberFormat
@@ -131,7 +167,11 @@ const DashboardWAsset = ({ selected, balances }: any) => {
               : styles.negative
           }`}
         >
-          {toFixedNoRounding(balances.filter((x: any) => x.short === "LINK")[0]?.change24h || 0,2)} %
+          {toFixedNoRounding(
+            balances.filter((x: any) => x.short === "LINK")[0]?.change24h || 0,
+            2
+          )}{" "}
+          %
         </div>
       </div>
     </div>
