@@ -107,7 +107,7 @@ const Dashboard = () => {
                 ) : null}
               </div>
               <button
-                className={styles.create}
+                className={`${styles.createBtn} ${styles.btnEffect}`}
                 disabled={isConnected ? false : true}
                 onClick={handleCreate}
               >
