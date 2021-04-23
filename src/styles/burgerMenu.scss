@@ -175,14 +175,32 @@ Note: Beware of modifying this element as it can break the animations - you shou
     // text-align: center;
     // color: #fff;
     position: absolute;
-      padding: inherit;
-      bottom: 40px;
+    padding: inherit;
+    bottom: 40px;
+    display: flex;
+    font-weight: 600;
+    text-decoration: underline;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    flex-direction: column;
+    align-items: center;
+    a {
+      margin-bottom: 20px;
+    }
+    .toggleIcons {
       display: flex;
-      font-weight: 600;
-      text-decoration: underline;
-      font-size: 14px;
-      text-align: center;
-      color: #fff;
+      flex-direction: row;
+      align-items: center;
+      .light {
+        margin-right: 15px;
+        cursor: pointer;
+      }
+      .dark {
+        margin-left: 15px;
+        cursor: pointer;
+      }
+    }
   }
 }
 

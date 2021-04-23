@@ -139,6 +139,24 @@ const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
               <a target="_blank" href="https://www.dafiprotocol.io/whitepaper">
                 Learn about DAFI
               </a>
+              <div className="toggleIcons">
+                <div
+                  className="light"
+                  onClick={() => dispatch(toggleTheme(false))}
+                >
+                  <img
+                    src={isDarkTheme ? lightInactive : lightActive}
+                    alt="light"
+                  />
+                </div>
+                <span>|</span>
+                <div
+                  className="dark"
+                  onClick={() => dispatch(toggleTheme(true))}
+                >
+                  <img src={isDarkTheme ? darkActive : darkInactive} alt="dark" />
+                </div>
+              </div>
             </div>
           </div>
         </Menu>
