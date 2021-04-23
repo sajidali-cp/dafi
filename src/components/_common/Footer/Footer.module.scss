@@ -1,7 +1,7 @@
 .wrapper {
   width: 100%;
   padding: 50px 20px 10px 20px;
-  background-color: #1D1F29;
+  background-color: #1d1f29;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +33,7 @@
           width: 100%;
           line-height: 1.5rem;
           font-size: 14px;
-          color: #6D727E;
+          color: #6d727e;
           max-width: 350px;
         }
       }
@@ -51,7 +51,7 @@
           }
           .link {
             margin: 8px 0;
-            color: #6D727E;
+            color: #6d727e;
             cursor: pointer;
           }
         }
@@ -66,7 +66,7 @@
           .input {
             width: 100%;
             margin-bottom: 10px;
-            background-color: #0C0D11;
+            background-color: #0c0d11;
             max-width: 375px;
             height: 40px;
             border: 1px solid transparent;
@@ -82,8 +82,57 @@
             border: 1px solid transparent;
             outline: none;
             border-radius: 5px;
-            background-color: #36CEBF;
+            background-color: #36cebf;
             color: white;
+          }
+
+          .button {
+            width: 200px;
+            height: 40px;
+            color: #fff;
+            margin-top: 10px;
+            border-radius: 5px;
+            padding: 10px 25px;
+            font-family: "Lato", sans-serif;
+            font-weight: 500;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+            box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+              7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+              4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+            outline: none;
+          }
+          .btnEffect {
+            background-color: #89d8d3;
+            background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+            border: none;
+            z-index: 1;
+          }
+          .btnEffect:after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            border-radius: 5px;
+            background-color: #4dccc6;
+            background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
+            transition: all 0.3s ease;
+          }
+          .btnEffect:hover {
+            color: #fff;
+          }
+          .btnEffect:hover:after {
+            top: 0;
+            height: 100%;
+          }
+          .btnEffect:active {
+            top: 2px;
           }
         }
       }
@@ -112,7 +161,7 @@
         font-size: 14px;
         line-height: 1.5rem;
         font-weight: 300;
-        color: #3F465A;
+        color: #3f465a;
       }
     }
   }
@@ -120,9 +169,7 @@
 
 @media only screen and (min-width: 1024px) {
   .wrapper {
-
     .footer {
-
       .top {
         display: flex;
         align-items: flex-start;
@@ -134,9 +181,7 @@
             margin-right: 100px;
           }
           .subscribe {
-
             .subscribeHeading {
-
             }
             .input {
               min-width: 300px;
@@ -146,17 +191,12 @@
             }
           }
         }
-
-
       }
       .bottom {
         flex-direction: row;
         .social {
-
           .icon {
-
             img {
-
             }
           }
         }
