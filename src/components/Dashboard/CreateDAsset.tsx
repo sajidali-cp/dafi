@@ -51,7 +51,12 @@ const CreateDAsset = ({
             </div>
             <div className={styles.assetInfo}>
               <div
-                className={`${styles.keyValueRow} ${styles.topBorder} ${styles.bottomBorder}`}
+                className={`${styles.keyValueRow}`}
+                style={{
+                  backgroundColor: isDarkTheme
+                    ? dark.colorSeven
+                    : light.colorSeven,
+                }}
               >
                 <div
                   className={styles.key}
@@ -75,7 +80,14 @@ const CreateDAsset = ({
                   />
                 </div>
               </div>
-              <div className={`${styles.keyValueRow} ${styles.bottomBorder}`}>
+              <div
+                className={`${styles.keyValueRow}`}
+                style={{
+                  backgroundColor: isDarkTheme
+                    ? dark.colorEight
+                    : light.colorEight,
+                }}
+              >
                 <div
                   className={styles.key}
                   style={{
@@ -94,7 +106,14 @@ const CreateDAsset = ({
                   {toFixedNoRounding(balances[activeIndex]?.change24h, 2)}%
                 </div>
               </div>
-              <div className={`${styles.keyValueRow} ${styles.bottomBorder}`}>
+              <div
+                className={`${styles.keyValueRow}`}
+                style={{
+                  backgroundColor: isDarkTheme
+                    ? dark.colorSeven
+                    : light.colorSeven,
+                }}
+              >
                 <div
                   className={styles.key}
                   style={{
@@ -114,7 +133,14 @@ const CreateDAsset = ({
                   />
                 </div>
               </div>
-              <div className={`${styles.keyValueRow} ${styles.bottomBorder}`}>
+              <div
+                className={`${styles.keyValueRow}`}
+                style={{
+                  backgroundColor: isDarkTheme
+                    ? dark.colorEight
+                    : light.colorEight,
+                }}
+              >
                 <div
                   className={styles.key}
                   style={{
