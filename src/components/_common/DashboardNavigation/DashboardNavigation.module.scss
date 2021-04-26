@@ -143,7 +143,6 @@
         border-radius: 5px;
         background-color: transparent;
         border: 1px solid #23fccf;
-
         .walletIcon {
           img {
             max-width: 100%;
@@ -155,6 +154,73 @@
           color: white;
         }
       }
+
+      .connectButton {
+        position: relative;
+        color: white;
+        width: 88%;
+        height: 40px;
+        line-height: 40px;
+        transition: all 0.3s;
+        cursor: pointer;
+        span {
+          transition: all 0.3s;
+          tranform: scale(1, 1);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .walletIcon {
+            z-index: 10;
+            margin-right: 10px;
+            img {
+              max-width: 100%;
+              height: auto;
+            }
+          }
+          .text {
+            z-index: 10;
+            font-size: 14px;
+            color: white;
+          }
+        }
+      }
+
+      .connectButton::before,
+      .connectButton::after {
+        content: "";
+        position: absolute;
+        transition: all 0.3s;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        border-radius: 5px;
+      }
+
+      .btnOne::before {
+        left: 4px;
+        z-index: 1;
+        opacity: 0;
+        background: #23fccf;
+        transform: scale(0.1, 1);
+      }
+
+      .btnOne:hover::before {
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+
+      .btnOne::after {
+        transition: all 0.3s;
+        border: 1px solid #23fccf;
+      }
+
+      .btnOne:hover::after {
+        transform: scale(1, 0.1);
+        opacity: 0;
+      }
+
       .webtokenSelection {
         width: 100%;
         .webselectionText {

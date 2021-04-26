@@ -5,8 +5,8 @@ export const light = {
   colorFour: "#2A6469",
   colorFive: "#f3f6ff",
   colorSix: "#000000",
-  colorSeven: "#DCECEB",
-  colorEight: "#C5EFEB",
+  colorSeven: "#E7F1F0",
+  colorEight: "#f3f6ff",
 };
 
 export const dark = {

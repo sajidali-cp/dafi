@@ -29,14 +29,14 @@ const MainNavigation = () => {
         itemListElement="nav"
       >
         <div className="bm-item">
-          <Link to="/">
+          <a href="https://www.dafiprotocol.io/">
             <div className="mainNavLink">Home</div>
-          </Link>
+          </a>
         </div>
         <div className="bm-item">
-          <Link to="/">
+          <a href="https://www.dafiprotocol.io/">
             <div className="mainNavLink">Token</div>
-          </Link>
+          </a>
         </div>
         <div className="bm-item">
           <Link to="/">

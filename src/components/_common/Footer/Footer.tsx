@@ -9,16 +9,15 @@ import logo from "../../../assets/images/dashboard-nav-logo.svg";
 
 const Footer = () => {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.footer}>
+    <div className={`${styles.wrapper} ${styles.area}`}>
+      <div className={`${styles.footer}`}>
         <div className={styles.top}>
           <div className={styles.about}>
             <div className={styles.logo}>
               <img src={logo} alt="logo" />
             </div>
             <div className={styles.aboutText}>
-              Creating a new inflation model for every Blockchain and DeFi
-              application. DAFI, not DeFi.
+              Rewarding better users in every decentralized network.
             </div>
           </div>
 
@@ -27,22 +26,12 @@ const Footer = () => {
               <div className={styles.linksHeading}>Information</div>
               <div className={styles.link}>
                 <a target="_blank" href="https://www.dafiprotocol.io/">
-                  Terms of service
+                  Dafi Protocol
                 </a>
               </div>
               <div className={styles.link}>
-                <a target="_blank" href="https://www.dafiprotocol.io/">
-                  About
-                </a>
-              </div>
-              <div className={styles.link}>
-                <a target="_blank" href="https://www.dafiprotocol.io/">
+                <a target="_blank" href="https://dafiprotocol.medium.com/">
                   Blog
-                </a>
-              </div>
-              <div className={styles.link}>
-                <a target="_blank" href="https://www.dafiprotocol.io/">
-                  Privacy Policy
                 </a>
               </div>
             </div>
@@ -50,34 +39,29 @@ const Footer = () => {
               <div className={styles.linksHeading}>Support</div>
               <div className={styles.link}>
                 <a target="_blank" href="https://www.dafiprotocol.io/">
-                  FAQ
+                  FAQs
                 </a>
               </div>
               <div className={styles.link}>
-                <a target="_blank" href="https://www.dafiprotocol.io/">
-                  Contact
-                </a>
-              </div>
-              <div className={styles.link}>
-                <a target="_blank" href="https://www.dafiprotocol.io/">
+                <a target="_blank" href="https://t.me/dafiprotocol">
                   Community
                 </a>
               </div>
             </div>
-            <div className={styles.subscribe}>
-              <div className={styles.subscribeHeading}>
-                Join The Dafi Protocol
-              </div>
-              <input className={styles.input} type="text" placeholder="Name" />
-              <input
-                className={styles.input}
-                type="text"
-                placeholder="Email Address"
-              />
-              <button className={`${styles.button} ${styles.btnEffect}`}>
-                Subscribe
-              </button>
-            </div>
+            {/*<div className={styles.subscribe}>*/}
+            {/*  <div className={styles.subscribeHeading}>*/}
+            {/*    Join The Dafi Protocol*/}
+            {/*  </div>*/}
+            {/*  <input className={styles.input} type="text" placeholder="Name" />*/}
+            {/*  <input*/}
+            {/*    className={styles.input}*/}
+            {/*    type="text"*/}
+            {/*    placeholder="Email Address"*/}
+            {/*  />*/}
+            {/*  <button className={`${styles.button} ${styles.btnEffect}`}>*/}
+            {/*    Subscribe*/}
+            {/*  </button>*/}
+            {/*</div>*/}
           </div>
         </div>
         <div className={styles.bottom}>
@@ -113,6 +97,18 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <ul className={styles.circles}>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
   );
 };
