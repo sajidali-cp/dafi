@@ -9,7 +9,7 @@ const HomeHeader = () => {
     <div className={styles.wrapper}>
       <MainNavigation />
       <div className={styles.header}>
-        <div className={styles.headerInfo}>
+        <div className={`${styles.headerInfo} ${styles.inLeft}`}>
           <div className={styles.headerHeading}>
             Reinventing Network Rewards
           </div>

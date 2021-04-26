@@ -62,13 +62,13 @@ const MainNavigation = () => {
           </div>
 
           <div className={styles.mainNavLinks}>
-            <Link to="/">
+            <a href="https://www.dafiprotocol.io/">
               <div className={styles.navLink}>Home</div>
-            </Link>
+            </a>
 
-            <Link to="/">
+            <a href="https://www.dafiprotocol.io/">
               <div className={styles.navLink}>Token</div>
-            </Link>
+            </a>
 
             <Link to="/">
               <div className={styles.navLink}>Features</div>

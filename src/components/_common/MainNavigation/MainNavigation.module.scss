@@ -65,9 +65,9 @@
         align-items: center;
         column-gap: 20px;
         .navLink {
+          cursor: pointer;
           text-transform: uppercase;
           color: #a8afcc;
-          cursor: pointer;
         }
 
         .navButton {

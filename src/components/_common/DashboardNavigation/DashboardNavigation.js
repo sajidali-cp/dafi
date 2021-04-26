@@ -183,6 +183,7 @@ const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
               className={`${styles.connectButton} ${styles.btnOne}`}
               onClick={handleConnectOpen}
             >
+              <div className={styles.btnAlt} />
               <span>
                 <div className={styles.walletIcon}>
                   <img src={wallet} alt="wallet" />
