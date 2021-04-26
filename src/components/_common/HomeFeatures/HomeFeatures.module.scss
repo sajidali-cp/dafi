@@ -84,3 +84,21 @@
     }
   }
 }
+
+.featureEnter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.featureEnterActive {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 800ms, transform 800ms;
+}
+.featureExit {
+  opacity: 1;
+}
+.featureExitActive {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
