@@ -65,7 +65,7 @@ const HomeFeatures = () => {
             </CSSTransition>
             <CSSTransition
               in={show}
-              timeout={1000}
+              timeout={2000}
               classNames={{
                 enter: styles.featureEnter,
                 enterActive: styles.featureEnterActive,
