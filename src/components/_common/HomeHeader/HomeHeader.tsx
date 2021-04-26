@@ -9,11 +9,13 @@ const HomeHeader = () => {
     <div className={styles.wrapper}>
       <MainNavigation />
       <div className={styles.header}>
-        <div className={styles.headerInfo}>
-          <div className={styles.headerHeading}>A Synthetic DeFi Protocol</div>
+        <div className={`${styles.headerInfo} ${styles.inLeft}`}>
+          <div className={styles.headerHeading}>
+            Reinventing Network Rewards
+          </div>
           <div className={styles.headerText}>
-            Creating a new inflation model for every Blockchain and DeFi
-            application. DAFI, not DeFi.
+            Creating incentives tied to network adoption for every staking &
+            social reward model.
           </div>
           <Link to="/app">
             <button className={`${styles.headerButton} ${styles.btnEffect}`}>

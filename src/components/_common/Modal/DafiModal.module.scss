@@ -5,6 +5,7 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
 }
 .modal {
   position: fixed;
@@ -16,6 +17,7 @@
   width: 90vw;
   max-width: 460px;
   outline: none;
+  z-index: 1001;
 }
 .modalContent {
   width: 100%;

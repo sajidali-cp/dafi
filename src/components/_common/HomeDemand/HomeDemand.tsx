@@ -7,16 +7,15 @@ const HomeDemand = () => {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.illustration}>
-          <img src={illustration} alt="illustration"/>
+          <img src={illustration} alt="illustration" />
         </div>
         <div className={styles.demandInfo}>
           <div className={styles.demandHeading}>
-            <span>Demand-pegged</span> Inflation
+            <span>Simulate</span> dToken rewards
           </div>
           <div className={styles.demandText}>
-            The Dafi protocol creates early-liquidity without
-            hyperinflation. Building a new generation of stable
-            Blockchain’s & DeFi.
+            DAFI Simulate is the first product which enables users to create
+            dTokens from four existing crypto-assets - wBTC, ETH, AAVE and LINK.
           </div>
         </div>
       </div>

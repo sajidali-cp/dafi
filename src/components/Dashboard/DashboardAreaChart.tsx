@@ -62,6 +62,7 @@ const DashboarAreaChart = ({ spark24H }: any) => {
           />
           <XAxis
             dataKey="date"
+            fontSize={12}
             tickFormatter={(val) => {
               if (!isNumber(val)) {
                 return "";
@@ -74,8 +75,7 @@ const DashboarAreaChart = ({ spark24H }: any) => {
             hide={false}
             axisLine={true}
             tickLine={false}
-            fontSize={14}
-            fontWeight={500}
+            fontSize={12}
             stroke="#4B4B4B"
           />
           <Tooltip content={<CustomTooltip />} animationDuration={0} />

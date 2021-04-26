@@ -154,7 +154,10 @@ const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
                   className="dark"
                   onClick={() => dispatch(toggleTheme(true))}
                 >
-                  <img src={isDarkTheme ? darkActive : darkInactive} alt="dark" />
+                  <img
+                    src={isDarkTheme ? darkActive : darkInactive}
+                    alt="dark"
+                  />
                 </div>
               </div>
             </div>
@@ -176,15 +179,21 @@ const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
             <img src={menu} alt="menu" />
           </div>
           <div className={styles.actionsDiv}>
-            <div className={styles.connect} onClick={handleConnectOpen}>
-              <div className={styles.walletIcon}>
-                <img src={wallet} alt="wallet" />
-              </div>
-              <div className={styles.text}>
-                {address
-                  ? "Connected Wallet" + " (" + address.substring(0, 4) + ")"
-                  : "Connect Wallet"}
-              </div>
+            <div
+              className={`${styles.connectButton} ${styles.btnOne}`}
+              onClick={handleConnectOpen}
+            >
+              <div className={styles.btnAlt} />
+              <span>
+                <div className={styles.walletIcon}>
+                  <img src={wallet} alt="wallet" />
+                </div>
+                <div className={styles.text}>
+                  {address
+                    ? "Connected Wallet" + " (" + address.substring(0, 4) + ")"
+                    : "Connect Wallet"}
+                </div>
+              </span>
             </div>
             <div className={styles.webtokenSelection}>
               <div className={styles.webselectionText}>
@@ -235,19 +244,6 @@ const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
               </div>
             </div>
           </div>
-          {/* <div className={styles.actionsDiv}>
-            <div className={styles.signUp}>Learn More</div>
-            <div className={styles.connect} onClick={handleConnectOpen}>
-              <div className={styles.walletIcon}>
-                <img src={wallet} alt="wallet" />
-              </div>
-              <div className={styles.text}>
-                {address
-                  ? "Connected Wallet" + " (" + address.substring(0, 4) + ")"
-                  : "Connect Wallet"}
-              </div>
-            </div>
-          </div> */}
         </div>
         <DafiModal isOpen={connectOpen} toggle={handleConnectOpen}>
           <div className={styles.connectModal}>
