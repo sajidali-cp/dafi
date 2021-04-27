@@ -80,7 +80,7 @@ const HomeFeatures = () => {
                 <div className={styles.heading}>Simulate</div>
                 <div className={styles.text}>
                   See your dToken balance pegging to the underlying
-                  crypto-asset’s deman.
+                  crypto-asset’s demand.
                 </div>
               </div>
             </CSSTransition>
