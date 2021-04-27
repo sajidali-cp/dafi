@@ -1,6 +1,6 @@
 import { AbiItem } from "web3-utils";
 
-export const wBTCAbi: AbiItem | AbiItem[] = [
+export const AaveAbi: AbiItem | AbiItem[] = [
   {
     "type": "constructor",
     "stateMutability": "nonpayable",
