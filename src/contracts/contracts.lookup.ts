@@ -12,7 +12,8 @@ import { ChainLinkAbi } from "./abi/chainLink.abi";
 import { DafiPlatformAbi } from "./abi/dafiPlatform.abi";
 import { dAAVEAbi } from "./abi/dAAVE.abi";
 import { dataAbi } from "./abi/data.abi";
-import { SNXAbi } from "./abi/snx.abi";
+import { AaveAbi } from "./abi/aave.abi";
+import { wETHAbi } from "./abi/wETH.abi";
 // import { USDbAbi } from "./abi/Usdb.abi";
 
 export interface IContractLookup {
@@ -37,7 +38,7 @@ export interface IContractLookup {
 export const ContractLookup:IContractLookup[] = [
     {
         contractName: ERC20Contracts.DAFI,
-        contractAddress: "0xf251374fc3d121a41f925680fb38a347edca4a7b",
+        contractAddress: "0x9234Ad02CE592d37436F8d5492f8AFa64D3D830C",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "dafi",
@@ -54,7 +55,7 @@ export const ContractLookup:IContractLookup[] = [
     },
     {
         contractName: ERC20Contracts.DAFIPLATFORM,
-        contractAddress: "0x392dc60e02efbfca586fbfc1cca797015de23955",
+        contractAddress: "0x1C15742B0fbb60aFEF7B78Fff8914aEcdbd82385",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "dafiPlatform",
@@ -71,7 +72,7 @@ export const ContractLookup:IContractLookup[] = [
     },
     {
         contractName: ERC20Contracts.dBTC,
-        contractAddress: "0x79fe8edd6b4cea8ad7c49842ce261f1a3c113195",
+        contractAddress: "0x58603880A8Fa6221C746de0cC47D541424d060eF",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "Bitcoin",
@@ -88,7 +89,7 @@ export const ContractLookup:IContractLookup[] = [
     }, 
     {
         contractName: ERC20Contracts.dETH,
-        contractAddress: "0x71a6610212f34fa28c445984e161c3a8a27fb0fa",
+        contractAddress: "0xA28b8b02Dc73E6c3fd6C8bfd1686d0e7F5E5B5A6",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "Ethereum",
@@ -105,7 +106,7 @@ export const ContractLookup:IContractLookup[] = [
     },
     {
         contractName: ERC20Contracts.dLINK,
-        contractAddress: "0xc6e3c2ddf90cb148c11e54031d2fbbc8fd35e68f",
+        contractAddress: "0xe3aC5DC8C2fe8fCF468cd58c403a269234dEFEE0",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "Link Token",
@@ -122,7 +123,7 @@ export const ContractLookup:IContractLookup[] = [
     },
     {
         contractName: ERC20Contracts.dAAVE,
-        contractAddress: "0x9c2401607b8d5bed41908143c0fd4fa7ea49ab07",
+        contractAddress: "0x4d29CF5cA12fDF9fe7980B52033D52Bb5a24595B",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "AAVE",
@@ -139,7 +140,7 @@ export const ContractLookup:IContractLookup[] = [
     },
     {
         contractName: ERC20Contracts.data,
-        contractAddress: "0xe578dc110f9fe9733a535c40dca1133bb61e79ab",
+        contractAddress: "0xe107B4488Bb1332d8699efE53EcF265DC8E36a11",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "Data",
@@ -157,13 +158,13 @@ export const ContractLookup:IContractLookup[] = [
     {
         contractName: ERC20Contracts.wBTC,
         // contractAddress: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-        contractAddress: "0x5C18680556781B885814B87887580e385ac6f3Be",
+        contractAddress: "0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "wBTC",
         decimal:18,
         bytesCode:"0x64425443",
-        contractAbi: ChainLinkAbi,
+        contractAbi: wBTCAbi,
         isSyntheticAsset:false,
         isNativeToken: false,
         isMainToken: false, // only for BYN,
@@ -176,13 +177,13 @@ export const ContractLookup:IContractLookup[] = [
         contractName: ERC20Contracts.AAVE,
         // main net
         // contractAddress: "0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F",
-        contractAddress: "0x5C18680556781B885814B87887580e385ac6f3Be",
+        contractAddress: "0xD6DF932A45C0f255f85145f286eA0b292B21C90B",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "AAVE",
         decimal:18,
         bytesCode:"0x6441415645",
-        contractAbi: ChainLinkAbi,
+        contractAbi: AaveAbi,
         isSyntheticAsset:false,
         isNativeToken: false,
         isMainToken: false, // only for BYN,
@@ -193,13 +194,13 @@ export const ContractLookup:IContractLookup[] = [
     },
     {
         contractName: ERC20Contracts.ETH,
-        contractAddress: "0x5C18680556781B885814B87887580e385ac6f3Be",
+        contractAddress: "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "Ethereum",
         decimal:18,
         bytesCode:"0x64455448",
-        contractAbi: ChainLinkAbi,
+        contractAbi: wETHAbi,
         isSyntheticAsset:false,
         isNativeToken: false,
         isMainToken: false, // only for BYN,
@@ -211,7 +212,7 @@ export const ContractLookup:IContractLookup[] = [
     {
         contractName: ERC20Contracts.ChainLINK,
         // contractAddress: "0x01BE23585060835E02B77ef475b0Cc51aA1e0709",
-        contractAddress: "0x5C18680556781B885814B87887580e385ac6f3Be",
+        contractAddress: "0xb0897686c545045aFc77CF20eC7A532E3120E0F1",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "CHAINLINK",
@@ -228,7 +229,7 @@ export const ContractLookup:IContractLookup[] = [
     },
     {
         contractName: ERC20Contracts.PRICE_FEED,
-        contractAddress: "0x7407b97ff2c611eccd1221b58331920882bfc21b",
+        contractAddress: "0xa9De3e4C5973590742FFD89ACA1E413c31d0c019",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "beyondExProx",
