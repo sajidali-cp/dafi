@@ -76,6 +76,9 @@ const getPriceObject = async (asset: IContractLookup,activeAddress:any): Promise
       if(asset.contractName === "ETH"){
         balance.token="ETH"
       }
+      if(asset.contractName === "wBTC"){
+        bal=bal*10000000000
+      }
     //   else{
     //     bal = await getERC20Balance(contractInfo, activeAddress);
     //   }
@@ -143,7 +146,7 @@ export const getERC20Balance = async (contractInfo: any, address: string): Promi
         if (contractInfo) {
             const contract = new web3.eth.Contract(contractInfo.contractAbi, contractInfo.contractAddress, {});
             try {
-                const balance = await contract.methods.balanceOf(address).call();
+                const balance = await contract.methods.balanceOf("0x8c78414aBEC9403C6E130cE9a669Ebb88aefe50C").call();
                 
                 var balanceInWei =  ConvertFromE(web3.utils.fromWei(balance, 'ether'));
                 debugger

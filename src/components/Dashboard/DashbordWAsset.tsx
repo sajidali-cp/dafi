@@ -10,14 +10,19 @@ const DashboardWAsset = ({ selected, balances }: any) => {
   const isDarkTheme = useSelector((state) => state.wallet.isDarkTheme);
   console.log(balances.filter((x: any) => x.name === "Ethereum"));
   console.log(balances);
-  //   DAFIBalance: 50
-  // ETHBalance: 1.85581908
-  // address: "0xC3A9Df4B29477F1DF51b7aFA7a708512d665Dbaf"
-  // dAAVEBalance: 0
-  // dBTCBalance: 4.918035773696
-  // dETHBalance: 3.32712850580634
-  // dLINKBalance: 0
-  // isConnected: true
+  const getAndChangeInE = (val: any) => {
+    debugger;
+    if(val === 0){
+      return toFixedNoRounding(val, 2);
+    }
+    if (val >= 0.01) {
+      return toFixedNoRounding(val, 2);
+    } else {
+      console.log(val.toExponential());
+      return val.toExponential().toString();
+    }
+  };
+
   return (
     <div className={styles.wAssetsWrapper}>
       {/* <div className={styles.wAssetsDiv}>
@@ -41,11 +46,15 @@ const DashboardWAsset = ({ selected, balances }: any) => {
       >
         <img src="/assets/images/currency1.svg" alt="img" />
         <pre className={`${styles.wAssetsBalance} ${styles.positiveColor}`}>
-          <NumberFormat
-            value={toFixedNoRounding(selected.dBTCBalance, 2)}
-            displayType={"text"}
-            thousandSeparator={true}
-          />
+          {selected.dBTCBalance > 0.01 ? (
+            <NumberFormat
+              value={getAndChangeInE(selected.dBTCBalance)}
+              displayType={"text"}
+              thousandSeparator={true}
+            />
+          ) : (
+            getAndChangeInE(selected.dBTCBalance)
+          )}
           <div className={`${styles.grayColor}`}>
             /$
             {toFixedNoRounding(
@@ -76,11 +85,16 @@ const DashboardWAsset = ({ selected, balances }: any) => {
       >
         <img src="/assets/images/currency2.svg" alt="img" />
         <pre className={`${styles.wAssetsBalance} ${styles.positiveColor}`}>
-          <NumberFormat
-            value={toFixedNoRounding(selected.dETHBalance, 2)}
-            displayType={"text"}
-            thousandSeparator={true}
-          />
+          {selected.dETHBalance > 0.01 ? (
+            <NumberFormat
+              value={getAndChangeInE(selected.dETHBalance)}
+              displayType={"text"}
+              thousandSeparator={true}
+            />
+          ) : (
+            getAndChangeInE(selected.dETHBalance)
+          )}
+
           <div className={`${styles.grayColor}`}>
             /$
             {toFixedNoRounding(
@@ -112,11 +126,15 @@ const DashboardWAsset = ({ selected, balances }: any) => {
       >
         <img src="/assets/images/currency3.svg" alt="img" />
         <pre className={`${styles.wAssetsBalance} ${styles.positiveColor}`}>
-          <NumberFormat
-            value={toFixedNoRounding(selected.dAAVEBalance, 2)}
-            displayType={"text"}
-            thousandSeparator={true}
-          />
+          {selected.dAAVEBalance > 0.01 ? (
+            <NumberFormat
+              value={getAndChangeInE(selected.dAAVEBalance)}
+              displayType={"text"}
+              thousandSeparator={true}
+            />
+          ) : (
+            getAndChangeInE(selected.dAAVEBalance)
+          )}
           <div className={`${styles.grayColor}`}>
             /$
             {toFixedNoRounding(
@@ -147,11 +165,15 @@ const DashboardWAsset = ({ selected, balances }: any) => {
       >
         <img src="/assets/images/currency4.svg" alt="img" />
         <pre className={`${styles.wAssetsBalance} ${styles.positiveColor}`}>
-          <NumberFormat
-            value={toFixedNoRounding(selected.dLINKBalance, 2)}
-            displayType={"text"}
-            thousandSeparator={true}
-          />
+          {selected.dLINKBalance > 0.01 ? (
+            <NumberFormat
+              value={getAndChangeInE(selected.dLINKBalance)}
+              displayType={"text"}
+              thousandSeparator={true}
+            />
+          ) : (
+            getAndChangeInE(selected.dLINKBalance)
+          )}
           <div className={`${styles.grayColor}`}>
             /$
             {toFixedNoRounding(

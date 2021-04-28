@@ -95,20 +95,19 @@ const useDashboard = () => {
   const handleCreate = async () => {
     setIsCreating(true);
     let _type;
-    if (balances[activeIndex].short === "wBTC") {
+    if (balances[activeIndex]?.short === "wBTC") {
       _type = "dBTC";
     }
-    if (balances[activeIndex].short === "ETH") {
+    if (balances[activeIndex]?.short === "ETH") {
       _type = "dETH";
     }
-    if (balances[activeIndex].short === "LINK") {
+    if (balances[activeIndex]?.short === "LINK") {
       _type = "dLINK";
     }
-    if (balances[activeIndex].short === "AAVE") {
+    if (balances[activeIndex]?.short === "AAVE") {
       _type = "dAAVE";
     }
     try {
-      ;
       if (!isValidated()) {
         setIsCreating(false);
         return;

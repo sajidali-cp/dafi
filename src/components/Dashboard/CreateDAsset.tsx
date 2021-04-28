@@ -21,6 +21,18 @@ const CreateDAsset = ({
 }: any) => {
   //@ts-ignore
   const isDarkTheme = useSelector((state) => state.wallet.isDarkTheme);
+  const getAndChangeInE = (val: any) => {
+    debugger;
+    if (val === 0) {
+      return toFixedNoRounding(val, 2);
+    }
+    if (val >= 0.01) {
+      return toFixedNoRounding(val, 2);
+    } else {
+      console.log(val.toExponential());
+      return val.toExponential().toString();
+    }
+  };
   return (
     <div
       className={styles.rightSection}
@@ -123,14 +135,17 @@ const CreateDAsset = ({
                   BALANCE
                 </div>
                 <div className={`${styles.value} ${styles.balanceTextColor}`}>
-                  <NumberFormat
-                    value={toFixedNoRounding(
-                      balances[activeIndex]?.cryptoBalance,
-                      2
-                    )}
-                    displayType={"text"}
-                    thousandSeparator={true}
-                  />
+                  {balances[activeIndex]?.cryptoBalance > 0.01 ? (
+                    <NumberFormat
+                      value={getAndChangeInE(
+                        balances[activeIndex]?.cryptoBalance
+                      )}
+                      displayType={"text"}
+                      thousandSeparator={true}
+                    />
+                  ) : (
+                    getAndChangeInE(balances[activeIndex]?.cryptoBalance)
+                  )}
                 </div>
               </div>
               <div
