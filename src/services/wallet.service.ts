@@ -143,7 +143,7 @@ export const getERC20Balance = async (contractInfo: any, address: string): Promi
         if (contractInfo) {
             const contract = new web3.eth.Contract(contractInfo.contractAbi, contractInfo.contractAddress, {});
             try {
-                const balance = await contract.methods.balanceOf("0x8c78414aBEC9403C6E130cE9a669Ebb88aefe50C").call();
+                const balance = await contract.methods.balanceOf(address).call();
                 
                 var balanceInWei =  ConvertFromE(web3.utils.fromWei(balance, 'ether'));
                 debugger
