@@ -98,7 +98,7 @@ const Dashboard = () => {
                     <span
                       className={`${styles.tooltiptext} ${styles.tooltipTop}`}
                     >
-                      dToken for each Asset can be generate once only
+                      dToken for each Asset can be generated only once.
                     </span>
                   </div>
                 </div>
