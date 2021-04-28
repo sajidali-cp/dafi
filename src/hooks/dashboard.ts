@@ -32,7 +32,7 @@ const useDashboard = () => {
     usdValue: 0,
   });
   const setUpcomponent = async (index: any) => {
-    debugger
+    ;
     let res = await asyncGetTokenSupplyHistory(
       balances.length > 0 ? balances[index].short : "wBTC"
     );
@@ -42,7 +42,7 @@ const useDashboard = () => {
     res.push(res2);
     setSpark24H([...res]);
   };
-  console.log(balances)
+  console.log(balances);
   useEffect(() => {
     setState({
       amount: balances.length > 0 ? balances[activeIndex].cryptoBalance : 0,
@@ -58,7 +58,7 @@ const useDashboard = () => {
   };
   const handleAssetSellection = async (short: any) => {
     let index = balances.map((obj: any) => obj.short).indexOf(short);
-    
+
     if (balances.length > 0 && index >= 0) {
       setActiveShort(short);
       setActiveIndex(index);
@@ -108,11 +108,16 @@ const useDashboard = () => {
       _type = "dAAVE";
     }
     try {
+      ;
       if (!isValidated()) {
         setIsCreating(false);
         return;
       }
-      const res = await getdToken(_type, state.amount, selectedFee).catch((e) =>{});
+      const res = await getdToken(
+        _type,
+        state.amount,
+        selectedFee
+      ).catch((e) => {});
       //@ts-ignore
       if (res.status) {
         alert.show("dToken Created Successfully.", { type: "success" });
@@ -124,7 +129,24 @@ const useDashboard = () => {
       setIsCreating(false);
     }
   };
+  const isdTokenGenerated = () => {
+    debugger
+    const activeObj = balances[activeIndex];
+    if (activeObj.short === "wBTC") {
+      return selected.dBTCBalance ? true : false;
+    }
+    if (activeObj.short === "AAVE") {
+      return selected.dAAVEBalance ? true : false;
+    }
+    if (activeObj.short === "ETH") {
+      return selected.dETHBalance ? true : false;
+    }
+    if (activeObj.short === "LINK") {
+      return selected.dLINKBalance ? true : false;
+    }
+  };
   const isValidated = () => {
+    ;
     let validated = true;
     //@ts-ignore
     if (state.amount === "") {
@@ -132,7 +154,7 @@ const useDashboard = () => {
       validated = false;
     }
     //@ts-ignore
-    if (state.amount === "0") {
+    if (state.amount === 0 || state.amount === "0") {
       setErrorMessage("Enter an valid value");
       validated = false;
     }
@@ -143,6 +165,10 @@ const useDashboard = () => {
     }
     //@ts-ignore
     if (state.submitting) {
+      validated = false;
+    }
+    if(isdTokenGenerated()){
+      alert.show("dToken for this for this Asset has already been created.", { type: "error" });
       validated = false;
     }
     return validated;

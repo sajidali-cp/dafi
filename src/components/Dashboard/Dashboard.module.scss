@@ -146,12 +146,66 @@
             display: flex;
             flex-direction: column;
             row-gap: 5px;
-            .inputText {
-              font-weight: normal;
-              font-size: 14px;
-              text-align: left;
-              color: #000;
+            .inputTextDiv {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .inputText {
+                font-weight: normal;
+                font-size: 14px;
+                text-align: left;
+                color: #000;
+              }
+              .tooltip {
+                position: relative;
+                color: #000;
+                display: inline-block;
+                img{
+                  width: 20px;
+                }
+              }
+
+              /* Tooltip text */
+              .tooltip {
+                .tooltiptext {
+                  visibility: hidden;
+                  width: 120px;
+                  font-size: 14px;
+                  background-color: rgb(44, 61, 79);
+                  color: #fff;
+                  text-align: center;
+                  padding: 5px 5px;
+                  border-radius: 6px;
+
+                  /* Position the tooltip text - see examples below! */
+                  position: absolute;
+                  z-index: 1;
+                }
+                .tooltipTop {
+                  bottom: 125%;
+                  left: 50%;
+                  margin-left: -60px;
+                }
+                .tooltipTop::after {
+                  content: "";
+                  position: absolute;
+                  top: 100%;
+                  left: 50%;
+                  margin-left: -5px;
+                  border-width: 5px;
+                  border-style: solid;
+                  border-color: rgb(44, 61, 79) transparent transparent transparent;
+              }
+              }
+
+              /* Show the tooltip text when you mouse over the tooltip container */
+              .tooltip:hover {
+                .tooltiptext {
+                  visibility: visible;
+                }
+              }
             }
+
             input {
               padding: 10px;
               color: #555555;

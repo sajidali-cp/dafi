@@ -82,17 +82,29 @@ const Dashboard = () => {
                 Create a dToken
               </div>
               <div className={styles.inputDiv}>
-                <div
-                  className={styles.inputText}
-                  style={{
-                    color: isDarkTheme ? dark.colorSix : light.colorSix,
-                  }}
-                >
-                  Amount
+                <div className={styles.inputTextDiv}>
+                  <div
+                    className={styles.inputText}
+                    style={{
+                      color: isDarkTheme ? dark.colorSix : light.colorSix,
+                    }}
+                  >
+                    Amount
+                  </div>
+                  <div className={styles.tooltip}  style={{
+                      color: isDarkTheme ? dark.colorSix : light.colorSix,
+                    }}>
+                   <img src="/assets/Icons/info.png"  />
+                    <span
+                      className={`${styles.tooltiptext} ${styles.tooltipTop}`}
+                    >
+                      dToken for each Asset can be generate once only
+                    </span>
+                  </div>
                 </div>
                 <input
                   type="number"
-                  placeholder="0.00  "
+                  placeholder="0.00"
                   value={state.amount}
                   onChange={handleChange}
                   style={{
