@@ -91,7 +91,7 @@ let change=getChange(Number(oldPrice),Number(currentPrice))
 let amount = Number(currentPrice) * bal;
 balance.rate= Number(currentPrice);
 balance.change24h= change;
-balance.cryptoBalance= bal;
+balance.cryptoBalance= Number(bal);
 balance.amount=amount;
     return balance;
    } catch (error) {

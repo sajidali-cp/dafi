@@ -17,6 +17,7 @@ import {
   saveWalletsInfoAction,
   SaveWeb3InfoAction,
   SetSelectedWalletAction,
+  wrongNetworkSelection,
 } from "../store/actions/WalletActions";
 import { Wallet } from "../store/types/WalletState";
 import {
@@ -26,7 +27,6 @@ import {
   updateBalances,
 } from "./wallet.service";
 import { ContractLookup } from "../contracts/contracts.lookup";
-
 
 // let web3Wrapper: Web3Wrapper | null = null;
 const web3: Web3 = new Web3();
@@ -44,18 +44,27 @@ export const initializeWeb3 = async (source: web3Sources): Promise<any> => {
         break;
     }
     if (web3.currentProvider) {
-      store.dispatch(SaveWeb3InfoAction(source, web3));
-      await updateDAssets();
-      await updateBalances(); //Update all assets balances
+      debugger;
+      let isTrue = false;
+      const netId= await web3.eth.net.getId();
+      if (netId !== 137) {
+        debugger
+        isTrue=true;
+        console.log("dfadfdfds");
+        store.dispatch(wrongNetworkSelection());
+      }
+      if (!isTrue) {
+        store.dispatch(SaveWeb3InfoAction(source, web3));
+        await updateDAssets();
+        await updateBalances(); //Update all assets balances
+      }
     } else {
       throw new Error("Error while accessing web3 provider.");
     }
-  } catch (e) {
-  }
+  } catch (e) {}
 };
 
 export const updateDAssets = async () => {
-  
   const accounts = await web3.eth.getAccounts();
   if (accounts.length <= 0) {
     throw new Error("Error, Provider is not available");
@@ -81,13 +90,13 @@ export const updateDAssets = async () => {
     (contract) => contract.contractName === ERC20Contracts.dAAVE
   );
   for (let i = 0; i < accounts.length; i++) {
-    let dLINKBalance: any = await getERC20Balance(dLINK, accounts[i]); 
+    let dLINKBalance: any = await getERC20Balance(dLINK, accounts[i]);
     let dBTCBalance: any = await getERC20Balance(dBTC, accounts[i]);
     let dETHBalance: any = await getERC20Balance(dETH, accounts[i]);
     let dAAVEBalance: any = await getERC20Balance(dAAVE, accounts[i]);
-    
+
     let DAFIObj: any = await getDAFI20Balance(DAFI, accounts[i]);
-    debugger
+
     let ETHBalance = await getETHBalance(accounts[i]);
     let walletObj: Wallet = {
       address: accounts[i],
@@ -97,9 +106,9 @@ export const updateDAssets = async () => {
       dAAVEBalance: dAAVEBalance ? Number(dAAVEBalance) : 0,
       DAFIBalance: DAFIObj ? Number(DAFIObj.DFYToken) : 0,
       ETHBalance: ETHBalance ? ETHBalance : 0,
-      isConnected : true,
+      isConnected: true,
     };
-    
+
     let chartsAssets = [
       { name: "dBTC", value: Number(DAFIObj.USDValOfdBTC), fill: "#f8c624" },
       { name: "dETH", value: Number(DAFIObj.USDValOfdETH), fill: "#6b74b5" },
@@ -175,4 +184,4 @@ export const initMEW = () => {
   // ethereum.send("eth_requestAccounts").then((accounts) => {
   //   console.log(`User's address is ${accounts[0]}`)
   // })
-}
+};

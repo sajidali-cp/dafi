@@ -12,6 +12,7 @@ export const SAVE_C_RATIO = "SAVE_C_RATIO";
 export const SAVE_ASSETS_DATA = "SAVE_ASSETS_DATA";
 export const SAVE_TARGET_C_RATIO = "SAVE_TARGET_C_RATIO";
 export const TOGGLE_THEME = "TOGGLE_THEME";
+export const WRONG_NETWORK_SELECTED = "WRONG_NETWORK_SELECTED";
 
 interface saveCRatio {
   type: typeof SAVE_C_RATIO;
@@ -66,6 +67,11 @@ interface toggleTheme {
   payload: any;
 }
 
+interface wrongNetwork {
+  type: typeof WRONG_NETWORK_SELECTED;
+  payload: any;
+}
+
 export type GetWalletInfoType =
   | SaveWalletData
   | LoadingBalancePending
@@ -77,4 +83,5 @@ export type GetWalletInfoType =
   | saveCRatio
   | saveAssetData
   | toggleTheme
-  | saveTagetCRatio;
+  | saveTagetCRatio
+  | wrongNetwork;

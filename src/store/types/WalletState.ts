@@ -25,6 +25,7 @@ export interface Balance {
 }
 
 export interface WalletState {
+  isWrongNetwork:boolean;
   web3: Web3;
   selected: Wallet;
   stackedBYN: number;

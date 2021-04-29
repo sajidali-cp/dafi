@@ -167,7 +167,7 @@ const useDashboard = () => {
       validated = false;
     }
     if(isdTokenGenerated()){
-      alert.show("dToken for this for this Asset has already been created.", { type: "error" });
+      alert.show("A dToken for this asset has already been created", { type: "error" });
       validated = false;
     }
     return validated;

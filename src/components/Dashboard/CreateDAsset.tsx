@@ -22,15 +22,14 @@ const CreateDAsset = ({
   //@ts-ignore
   const isDarkTheme = useSelector((state) => state.wallet.isDarkTheme);
   const getAndChangeInE = (val: any) => {
-    debugger;
+    debugger
     if (val === 0) {
       return toFixedNoRounding(val, 2);
     }
     if (val >= 0.01) {
       return toFixedNoRounding(val, 2);
     } else {
-      console.log(val.toExponential());
-      return val.toExponential().toString();
+      return val?.toExponential(1).toString();
     }
   };
   return (

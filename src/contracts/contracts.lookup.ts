@@ -38,7 +38,7 @@ export interface IContractLookup {
 export const ContractLookup:IContractLookup[] = [
     {
         contractName: ERC20Contracts.DAFI,
-        contractAddress: "0x9234Ad02CE592d37436F8d5492f8AFa64D3D830C",
+        contractAddress: "0x646F105db0D119655bc9298d2085Dd54101F63D0",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "dafi",

@@ -1,4 +1,5 @@
 // import { act } from "react-dom/test-utils";
+import { stat } from "fs";
 import Web3 from "web3";
 import {
   GetWalletInfoType,
@@ -13,10 +14,12 @@ import {
   SAVE_TARGET_C_RATIO,
   SAVE_ASSETS_DATA,
   TOGGLE_THEME,
+  WRONG_NETWORK_SELECTED,
 } from "../actions/WalletActionTypes";
 import { WalletState, Wallet } from "../types/WalletState";
 
 const initialState: WalletState = {
+  isWrongNetwork:false,
   stackedBYN: 0,
   unstacked: 0,
   totalByn: 0,
@@ -47,6 +50,11 @@ export function walletReducer(
   action: GetWalletInfoType
 ): WalletState {
   switch (action.type) {
+    case WRONG_NETWORK_SELECTED:
+      return {
+        ...state,
+        isWrongNetwork:true,
+      };
     case SAVE_C_RATIO:
       return {
         ...state,

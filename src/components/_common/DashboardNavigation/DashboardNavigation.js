@@ -27,7 +27,7 @@ const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
   const alert = useAlert();
   const {
     selected: { address, isConnected },
-    balances,
+    isWrongNetwork,
   } = useSelector((state) => state.wallet);
   const [connectOpen, setConnectOpen] = useState(false);
   const handleConnectOpen = () => {
@@ -50,12 +50,12 @@ const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
   const handleAssetChange = (i) => {
     handleAssetSellection(i);
   };
-
   const connectToWallet = async (value) => {
     // props.onConnected();
-    await initializeWeb3(value).catch((e) => {
+    const res = await initializeWeb3(value).catch((e) => {
       alert.show("Provider is not available", { type: "error" });
     });
+    console.log(res);
   };
 
   const assetData = [
@@ -245,6 +245,19 @@ const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
             </div>
           </div>
         </div>
+        <DafiModal isOpen={isWrongNetwork}>
+          <div className={styles.wrongNetworkModel}>
+            <div className={styles.text}>
+              {" "}
+              Switch to the Matic mainnet as your network, this is enabled to
+              keep gas fees low for everyone.
+            </div>
+            <a target="_blank" href="https://docs.matic.network/docs/develop/metamask/config-matic/">
+              {" "}
+             How?
+            </a>
+          </div>
+        </DafiModal>
         <DafiModal isOpen={connectOpen} toggle={handleConnectOpen}>
           <div className={styles.connectModal}>
             <div className={styles.connectOption}>

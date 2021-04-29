@@ -11,7 +11,7 @@ const DashboardWAsset = ({ selected, balances }: any) => {
   console.log(balances.filter((x: any) => x.name === "Ethereum"));
   console.log(balances);
   const getAndChangeInE = (val: any) => {
-    debugger;
+    
     if(val === 0){
       return toFixedNoRounding(val, 2);
     }
@@ -19,7 +19,7 @@ const DashboardWAsset = ({ selected, balances }: any) => {
       return toFixedNoRounding(val, 2);
     } else {
       console.log(val.toExponential());
-      return val.toExponential().toString();
+      return val.toExponential(1).toString();
     }
   };
 

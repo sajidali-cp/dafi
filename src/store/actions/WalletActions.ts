@@ -13,6 +13,7 @@ import {
   SET_SELECTED_DATA,
   UPDATE_STACK_BALANCE,
   TOGGLE_THEME,
+  WRONG_NETWORK_SELECTED
 } from "./WalletActionTypes";
 
 export const SetCurrentCRatioAction = (payload: any) => {
@@ -30,6 +31,9 @@ export const SaveWeb3InfoAction = (
 };
 export const SetSelectedWalletAction = (wallet: Wallet): GetWalletInfoType => {
   return { type: SET_SELECTED_DATA, selected: wallet };
+};
+export const wrongNetworkSelection = (): any => {
+  return { type: WRONG_NETWORK_SELECTED};
 };
 
 export const saveWalletsInfoAction = (wallets: Wallet[]): GetWalletInfoType => {

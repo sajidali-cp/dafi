@@ -33,7 +33,7 @@ const MainNavigation = () => {
             <div className="mainNavLink">Home</div>
           </a>
         </div>
-        <div className="bm-item">
+        {/* <div className="bm-item">
           <a href="https://www.dafiprotocol.io/">
             <div className="mainNavLink">Token</div>
           </a>
@@ -42,7 +42,7 @@ const MainNavigation = () => {
           <Link to="/">
             <div className="mainNavLink">Features</div>
           </Link>
-        </div>
+        </div> */}
         <div className="bm-item">
           <Link to="/app">
             <button className="mainNavButton btnEffect">Go to Dashboard</button>
@@ -66,13 +66,13 @@ const MainNavigation = () => {
               <div className={styles.navLink}>Home</div>
             </a>
 
-            <a href="https://www.dafiprotocol.io/">
+            {/* <a href="https://www.dafiprotocol.io/">
               <div className={styles.navLink}>Token</div>
             </a>
 
             <Link to="/">
               <div className={styles.navLink}>Features</div>
-            </Link>
+            </Link> */}
 
             <Link to="/app">
               <button
