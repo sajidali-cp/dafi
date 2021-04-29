@@ -62,6 +62,7 @@ const getPriceObject = async (asset: IContractLookup,activeAddress:any): Promise
         rate: 0,
         change24h: 0,
         cryptoBalance: 0,
+        demandFactor:0,
         amount:0,
         icon: `/${asset.icon}`
     }
@@ -72,7 +73,7 @@ const getPriceObject = async (asset: IContractLookup,activeAddress:any): Promise
       );
       let bal;
       bal = await getERC20Balance(contractInfo, activeAddress);
-      debugger
+      
       if(asset.contractName === "ETH"){
         balance.token="ETH"
       }
@@ -86,12 +87,15 @@ const getPriceObject = async (asset: IContractLookup,activeAddress:any): Promise
 const obj:any=await dTokenDetails(asset.bytesCode);
 let currentPrice=Web3.utils.fromWei(obj._currentPrice, 'ether');
 let oldPrice=Web3.utils.fromWei(obj._oldPrice, 'ether');
+
+let demand=Web3.utils.fromWei(obj._demandFactor, 'ether');
 let change=getChange(Number(oldPrice),Number(currentPrice))
 
 let amount = Number(currentPrice) * bal;
 balance.rate= Number(currentPrice);
 balance.change24h= change;
 balance.cryptoBalance= Number(bal);
+balance.demandFactor= Number(demand)
 balance.amount=amount;
     return balance;
    } catch (error) {
@@ -114,7 +118,7 @@ export const updateBalances = async () => {
     const noPriceFeed= assets.filter(c => c.contractName != "PriceFeed");
     let balances: Balance[] = [];
     for (let i = 0; i < noPriceFeed.length; i++) {
-        debugger
+        
         let res=await getPriceObject(noPriceFeed[i],activeAddress);
         balances.push(res);
     }
@@ -141,7 +145,7 @@ export const getETHBalance = async (address: string): Promise<number> => {
 // @ts-ignore
 export const getERC20Balance = async (contractInfo: any, address: string): Promise<number> => {
     web3 = store.getState().wallet.web3;
-    debugger
+    
     if (web3.currentProvider) {
         if (contractInfo) {
             const contract = new web3.eth.Contract(contractInfo.contractAbi, contractInfo.contractAddress, {});
@@ -149,7 +153,7 @@ export const getERC20Balance = async (contractInfo: any, address: string): Promi
                 const balance = await contract.methods.balanceOf(address).call();
                 
                 var balanceInWei =  ConvertFromE(web3.utils.fromWei(balance, 'ether'));
-                debugger
+                
                 // balanceInWei=parseFloat(balanceInWei)
                 return balanceInWei;
                 // let bal: number = Number(balanceInWei);// / Math.pow(10, contractInfo.decimal)
@@ -167,6 +171,7 @@ export const getERC20Balance = async (contractInfo: any, address: string): Promi
 // @ts-ignore
 export const getDAFI20Balance = async (contractInfo: any, address: string): Promise<number> => {
     web3 = store.getState().wallet.web3;
+    debugger
     const chartsAssets:any={
         DAFIToken: 0,
         USDValOfdBTC: 0,

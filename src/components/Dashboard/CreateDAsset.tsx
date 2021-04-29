@@ -22,7 +22,7 @@ const CreateDAsset = ({
   //@ts-ignore
   const isDarkTheme = useSelector((state) => state.wallet.isDarkTheme);
   const getAndChangeInE = (val: any) => {
-    debugger
+    
     if (val === 0) {
       return toFixedNoRounding(val, 2);
     }
@@ -172,6 +172,39 @@ const CreateDAsset = ({
                   $
                   <NumberFormat
                     value={toFixedNoRounding(balances[activeIndex]?.amount, 2)}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                  />
+                </div>
+              </div>
+              <div
+                className={`${styles.keyValueRow}`}
+                style={{
+                  backgroundColor: isDarkTheme
+                    ? dark.colorSeven
+                    : light.colorSeven,
+                }}
+              >
+                <div
+                  className={styles.key}
+                  style={{
+                    color: isDarkTheme ? dark.colorSix : light.colorSix,
+                  }}
+                >
+                  Demand
+                </div>
+                <div
+                  className={`${styles.value} ${styles.valueTextColor}`}
+                  style={{
+                    color: isDarkTheme ? dark.colorSix : light.colorSix,
+                  }}
+                >
+                  $
+                  <NumberFormat
+                    value={toFixedNoRounding(
+                      balances[activeIndex]?.demandFactor,
+                      2
+                    )}
                     displayType={"text"}
                     thousandSeparator={true}
                   />

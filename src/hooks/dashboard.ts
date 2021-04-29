@@ -129,7 +129,7 @@ const useDashboard = () => {
     }
   };
   const isdTokenGenerated = () => {
-    debugger
+    
     const activeObj = balances[activeIndex];
     if (activeObj.short === "wBTC") {
       return selected.dBTCBalance ? true : false;

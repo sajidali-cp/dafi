@@ -21,6 +21,7 @@ export interface Balance {
   change24h: number;
   amount: number;
   cryptoBalance: number;
+  demandFactor:number;
   icon: string;
 }
 

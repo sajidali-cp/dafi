@@ -44,11 +44,11 @@ export const initializeWeb3 = async (source: web3Sources): Promise<any> => {
         break;
     }
     if (web3.currentProvider) {
-      debugger;
+      
       let isTrue = false;
       const netId= await web3.eth.net.getId();
       if (netId !== 137) {
-        debugger
+        
         isTrue=true;
         console.log("dfadfdfds");
         store.dispatch(wrongNetworkSelection(true));
