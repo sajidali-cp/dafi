@@ -53,7 +53,7 @@ export function walletReducer(
     case WRONG_NETWORK_SELECTED:
       return {
         ...state,
-        isWrongNetwork:true,
+        isWrongNetwork:action.payload,
       };
     case SAVE_C_RATIO:
       return {

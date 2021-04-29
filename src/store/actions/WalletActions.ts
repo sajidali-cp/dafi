@@ -32,8 +32,8 @@ export const SaveWeb3InfoAction = (
 export const SetSelectedWalletAction = (wallet: Wallet): GetWalletInfoType => {
   return { type: SET_SELECTED_DATA, selected: wallet };
 };
-export const wrongNetworkSelection = (): any => {
-  return { type: WRONG_NETWORK_SELECTED};
+export const wrongNetworkSelection = (payload:any): any => {
+  return { type: WRONG_NETWORK_SELECTED,payload};
 };
 
 export const saveWalletsInfoAction = (wallets: Wallet[]): GetWalletInfoType => {

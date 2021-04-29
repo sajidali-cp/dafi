@@ -51,7 +51,7 @@ export const initializeWeb3 = async (source: web3Sources): Promise<any> => {
         debugger
         isTrue=true;
         console.log("dfadfdfds");
-        store.dispatch(wrongNetworkSelection());
+        store.dispatch(wrongNetworkSelection(true));
       }
       if (!isTrue) {
         store.dispatch(SaveWeb3InfoAction(source, web3));

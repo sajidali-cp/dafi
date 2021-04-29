@@ -18,7 +18,7 @@ import { useAlert } from "react-alert";
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation, Link } from "react-router-dom";
 import { light, dark } from "../../../theme/theme";
-import { toggleTheme } from "../../../store/actions/WalletActions";
+import { toggleTheme, wrongNetworkSelection } from "../../../store/actions/WalletActions";
 
 const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
   const isDarkTheme = useSelector((state) => state.wallet.isDarkTheme);
@@ -245,7 +245,7 @@ const DashboardNavigation = ({ handleAssetSellection, activeShort }) => {
             </div>
           </div>
         </div>
-        <DafiModal isOpen={isWrongNetwork}>
+        <DafiModal isOpen={isWrongNetwork} toggle={() => dispatch(wrongNetworkSelection(false))}>
           <div className={styles.wrongNetworkModel}>
             <div className={styles.text}>
               {" "}
