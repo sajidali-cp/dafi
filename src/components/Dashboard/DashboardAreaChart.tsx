@@ -26,7 +26,9 @@ const DashboarAreaChart = ({ spark24H }: any) => {
               {format(label, "do MMM yy")}
             </div>
             <div className={styles.labelStyle}>
-              {toFixedNoRounding(price, 4)}
+              {price >= 0.01 || price === 0
+                ? toFixedNoRounding(price, 4)
+                : price?.toExponential(1).toString()}
             </div>
           </div>
         );
