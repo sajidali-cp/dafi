@@ -199,7 +199,6 @@ const CreateDAsset = ({
                     color: isDarkTheme ? dark.colorSix : light.colorSix,
                   }}
                 >
-                  $
                   <NumberFormat
                     value={toFixedNoRounding(
                       balances[activeIndex]?.demandFactor,

@@ -171,7 +171,6 @@ export const getERC20Balance = async (contractInfo: any, address: string): Promi
 // @ts-ignore
 export const getDAFI20Balance = async (contractInfo: any, address: string): Promise<number> => {
     web3 = store.getState().wallet.web3;
-    debugger
     const chartsAssets:any={
         DAFIToken: 0,
         USDValOfdBTC: 0,
