@@ -191,7 +191,7 @@ const CreateDAsset = ({
                     color: isDarkTheme ? dark.colorSix : light.colorSix,
                   }}
                 >
-                  Demand
+                  DEMAND FACTOR
                 </div>
                 <div
                   className={`${styles.value} ${styles.valueTextColor}`}
