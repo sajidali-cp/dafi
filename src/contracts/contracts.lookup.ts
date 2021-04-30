@@ -38,7 +38,7 @@ export interface IContractLookup {
 export const ContractLookup:IContractLookup[] = [
     {
         contractName: ERC20Contracts.DAFI,
-        contractAddress: "0x646F105db0D119655bc9298d2085Dd54101F63D0",
+        contractAddress: "0xd7731860f41E653208431f1A209a4674cDF5C144",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "dafi",
@@ -55,7 +55,7 @@ export const ContractLookup:IContractLookup[] = [
     },
     {
         contractName: ERC20Contracts.DAFIPLATFORM,
-        contractAddress: "0x722b571541E42db9Ce8A36Dd289b6f9c99F29cd4",
+        contractAddress: "0xE4088F5F6D11E4fD5b70C2D1db8EaFc24a55725B",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "dafiPlatform",
@@ -72,7 +72,7 @@ export const ContractLookup:IContractLookup[] = [
     },
     {
         contractName: ERC20Contracts.dBTC,
-        contractAddress: "0x58603880A8Fa6221C746de0cC47D541424d060eF",
+        contractAddress: "0xB9DBF908ECe324f66e6004D0b8A4dDb4618FCDA9",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "Bitcoin",
@@ -89,7 +89,7 @@ export const ContractLookup:IContractLookup[] = [
     }, 
     {
         contractName: ERC20Contracts.dETH,
-        contractAddress: "0xA28b8b02Dc73E6c3fd6C8bfd1686d0e7F5E5B5A6",
+        contractAddress: "0x994BbdCE7891F4AaB3ce700Daee6A979a47B3A92",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "Ethereum",
@@ -106,7 +106,7 @@ export const ContractLookup:IContractLookup[] = [
     },
     {
         contractName: ERC20Contracts.dLINK,
-        contractAddress: "0xe3aC5DC8C2fe8fCF468cd58c403a269234dEFEE0",
+        contractAddress: "0x19fE2A0927AD981EBBE69Fed7Bcc352d89c15282",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "Link Token",
@@ -123,7 +123,7 @@ export const ContractLookup:IContractLookup[] = [
     },
     {
         contractName: ERC20Contracts.dAAVE,
-        contractAddress: "0x4d29CF5cA12fDF9fe7980B52033D52Bb5a24595B",
+        contractAddress: "0x30423D6932C3A92D24C0eDf5f28988e262f061d1",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "AAVE",
@@ -140,7 +140,7 @@ export const ContractLookup:IContractLookup[] = [
     },
     {
         contractName: ERC20Contracts.data,
-        contractAddress: "0xe107B4488Bb1332d8699efE53EcF265DC8E36a11",
+        contractAddress: "0xd70dF8F03484371C4dc4bF399d8Cf564bcF476e4",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "Data",
@@ -229,7 +229,7 @@ export const ContractLookup:IContractLookup[] = [
     },
     {
         contractName: ERC20Contracts.PRICE_FEED,
-        contractAddress: "0xa9De3e4C5973590742FFD89ACA1E413c31d0c019",
+        contractAddress: "0x2B8514fee238233b7e1FFac785B79B19318d3467",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "beyondExProx",
