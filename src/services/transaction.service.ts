@@ -16,7 +16,7 @@ export const dTokenCreation = async () => {
       if (DAFI) {
           const contract = new web3.eth.Contract(DAFI.contractAbi, DAFI.contractAddress, {});
           try {
-              const res = await contract.methods.getdTokenCreation().call();
+              const res = await contract.methods.dTokenCreation().call();
               // var balanceInWei =  ConvertFromE(web3.utils.fromWei(balance, 'ether'));
               return res;
           } catch (error) {

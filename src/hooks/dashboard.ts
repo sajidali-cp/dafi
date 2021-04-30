@@ -127,7 +127,7 @@ const useDashboard = () => {
         updateBalances();
       }
      }else{
-      alert.show("Can`t Create dToken.", { type: "error" });
+      alert.show("Currently dToken’s are not available on Simulate", { type: "error" });
      }
     } catch (error) {
       setIsCreating(false);
