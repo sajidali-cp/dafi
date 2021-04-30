@@ -7,6 +7,26 @@ import { ContractLookup } from "../contracts/contracts.lookup";
 
 let web3: Web3 = new Web3();
 
+export const dTokenCreation = async () => {
+  web3 = store.getState().wallet.web3;
+  const DAFI = ContractLookup.find(
+      (contract) => contract.contractName === ERC20Contracts.DAFIPLATFORM
+    );
+  if (web3.currentProvider) {
+      if (DAFI) {
+          const contract = new web3.eth.Contract(DAFI.contractAbi, DAFI.contractAddress, {});
+          try {
+              const res = await contract.methods.getdTokenCreation().call();
+              // var balanceInWei =  ConvertFromE(web3.utils.fromWei(balance, 'ether'));
+              return res;
+          } catch (error) {
+              return false;
+          }
+      }
+  } else {
+      return false
+  }
+}
 // @ts-ignore
 export const getdToken = async (
     _type:any,

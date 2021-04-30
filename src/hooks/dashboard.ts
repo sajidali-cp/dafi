@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAlert } from "react-alert";
 import { useSelector } from "react-redux";
-import { getdToken } from "../services/transaction.service";
+import { getdToken,dTokenCreation } from "../services/transaction.service";
 import {
   getTokenSupplyHistory,
   totalSupply,
@@ -112,6 +112,8 @@ const useDashboard = () => {
         setIsCreating(false);
         return;
       }
+      const allowed=await dTokenCreation();
+     if(allowed){
       const res = await getdToken(
         _type,
         state.amount,
@@ -124,6 +126,9 @@ const useDashboard = () => {
         updateDAssets();
         updateBalances();
       }
+     }else{
+      alert.show("Can`t Create dToken.", { type: "error" });
+     }
     } catch (error) {
       setIsCreating(false);
     }
