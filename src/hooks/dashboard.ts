@@ -128,6 +128,7 @@ const useDashboard = () => {
       }
      }else{
       alert.show("Currently dToken’s are not available on Simulate", { type: "error" });
+      setIsCreating(false);
      }
     } catch (error) {
       setIsCreating(false);
