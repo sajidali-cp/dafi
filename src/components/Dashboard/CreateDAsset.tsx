@@ -22,7 +22,7 @@ const CreateDAsset = ({
   //@ts-ignore
   const isDarkTheme = useSelector((state) => state.wallet.isDarkTheme);
   const getAndChangeInE = (val: any) => {
-    
+    debugger
     if (val === 0) {
       return toFixedNoRounding(val, 2);
     }
@@ -134,16 +134,16 @@ const CreateDAsset = ({
                   BALANCE
                 </div>
                 <div className={`${styles.value} ${styles.balanceTextColor}`}>
-                  {balances[activeIndex]?.cryptoBalance > 0.01 ? (
+                  {Number(balances[activeIndex]?.cryptoBalance) > 0.01 ? (
                     <NumberFormat
                       value={getAndChangeInE(
-                        balances[activeIndex]?.cryptoBalance
+                        Number(balances[activeIndex]?.cryptoBalance)
                       )}
                       displayType={"text"}
                       thousandSeparator={true}
                     />
                   ) : (
-                    getAndChangeInE(balances[activeIndex]?.cryptoBalance)
+                    getAndChangeInE(Number(balances[activeIndex]?.cryptoBalance))
                   )}
                 </div>
               </div>

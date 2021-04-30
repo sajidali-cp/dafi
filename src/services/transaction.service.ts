@@ -33,6 +33,7 @@ export const getdToken = async (
     _balance:any,
     gassFee:any
 ) => {
+  debugger
   web3 = store.getState().wallet.web3;
   let walletInfo = store.getState().wallet;
 
@@ -70,7 +71,7 @@ var gasLimit = Math.ceil(block.gasLimit/block.transactions.length);
     //  }else{
     //    _balanceInWei = Web3.utils.toWei(String(_balance),'ether');
     //  }
-     _balanceInWei = Web3.utils.toWei(String(_balance),'ether');
+     _balanceInWei = Web3.utils.toWei(_balance,'ether');
       const amount = web3.utils.toWei("5", 'ether');
       const tx = await web3.eth.sendTransaction({
       from: activeAddress,
