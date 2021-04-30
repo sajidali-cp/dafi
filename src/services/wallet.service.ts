@@ -153,7 +153,7 @@ export const getERC20Balance = async (contractInfo: any, address: string): Promi
             const contract = new web3.eth.Contract(contractInfo.contractAbi, contractInfo.contractAddress, {});
             try {
                 debugger
-                let balance = await contract.methods.balanceOf("0x552bDBeFdE25F22Bb0040D02822F8ef47305fD7b").call();
+                let balance = await contract.methods.balanceOf(address).call();
                 
                 if(contractInfo.contractName === "wBTC"){
                     balance=balance+"0000000000"
