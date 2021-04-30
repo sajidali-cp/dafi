@@ -55,7 +55,7 @@ export const ContractLookup:IContractLookup[] = [
     },
     {
         contractName: ERC20Contracts.DAFIPLATFORM,
-        contractAddress: "0xb8b71A076De09c979A3278BCf45Df10cebadC7a4",
+        contractAddress: "0x5491e4A4CB0b0a9FEdb0d45277aF72f18E3158D1",
         marketRateApiID: "",
         oracleRateID: "",
         fullName: "dafiPlatform",
